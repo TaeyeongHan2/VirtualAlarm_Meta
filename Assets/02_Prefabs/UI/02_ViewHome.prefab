@@ -170,9 +170,9 @@ RectTransform:
   - {fileID: 5336101695688874948}
   m_Father: {fileID: 727694266880326320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -130}
   m_SizeDelta: {x: 800, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &78580022605056654
@@ -492,9 +492,9 @@ RectTransform:
   - {fileID: 7397449620172318789}
   m_Father: {fileID: 727694266880326320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -430}
   m_SizeDelta: {x: 800, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3235790808359806793
@@ -673,7 +673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3031170007740738671
 RectTransform:
   m_ObjectHideFlags: 0
@@ -928,7 +928,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5810733852888016780}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UINavigator, Assembly-CSharp
+        m_MethodName: ChangePage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8659677570715152642
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,9 +975,9 @@ RectTransform:
   - {fileID: 7205192497694820981}
   m_Father: {fileID: 727694266880326320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -730}
   m_SizeDelta: {x: 800, y: 260}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5892795604044873146

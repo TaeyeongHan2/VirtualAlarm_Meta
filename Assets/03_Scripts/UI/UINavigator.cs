@@ -25,18 +25,14 @@ public class UINavigator : MonoBehaviour
 
     }
     
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private IEnumerator Start()
     {
         yield return new WaitForSeconds(1f);
         ChangePage(1);
-        
-
 
     }
 
-    private void ChangePage(int pageIndex)
+    public void ChangePage(int pageIndex)
     {
         var lastPage = currentPage;
         lastPage.SetActive(false);
@@ -45,7 +41,7 @@ public class UINavigator : MonoBehaviour
         currentPage.SetActive(true);
         
     }
-    // Update is called once per frame
+    
     void Update()
     {
         
