@@ -166,7 +166,6 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.LHJ.VirtualAlarm
     Standalone: com.Unity-Technologies.com.unity.template.urp-blank
-    iPhone: com.LHJ.VirtualAlarm
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -526,7 +525,6 @@ PlayerSettings:
     m_APIs: 10000000
     m_Automatic: 1
   - m_BuildTarget: AndroidPlayer
-    m_APIs: 0b00000015000000
     m_Automatic: 0
   m_BuildTargetVRSettings: []
   m_DefaultShaderChunkSizeInMB: 16
@@ -552,9 +550,6 @@ PlayerSettings:
   - serializedVersion: 3
     m_BuildTarget: Android
     m_Formats: 03000000
-  - serializedVersion: 3
-    m_BuildTarget: iOS
-    m_Formats: 03000000
   playModeTestRunnerEnabled: 0
   runPlayModeTestAsEditModeTest: 0
   actionOnDotNetUnhandledException: 1
@@ -562,9 +557,6 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
-  cameraUsageDescription: Augmented Reality requires the CAM
-  locationUsageDescription: Augmented Reality requires the GPS
-  microphoneUsageDescription: Augmented Reality requires the MIC
   bluetoothUsageDescription: 
   macOSTargetOSVersion: 11.0
   switchNMETAOverride: 
@@ -821,6 +813,7 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   webWasm2023: 0
   scriptingDefineSymbols:
+    Android: MAGICACLOTH2
     iPhone: UNITY_XR_ARKIT_LOADER_ENABLED;UNITY_XR_ARKIT_FACE_TRACKING_ENABLED
   additionalCompilerArguments: {}
   platformArchitecture: {}
