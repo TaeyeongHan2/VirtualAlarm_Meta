@@ -5,9 +5,9 @@ public class AlrarmSettingContext : MonoBehaviour
 {
     private void OnEnable()
     {
-        AlramDataGenerator.instance.CreateTempAlarmData();
+        AlramDataGenerator.instance.CreateAlarmData();
         //UIReference.instance.ClockTimeSetButtonText.text = DateTime.Now.ToString("tt hh:mm");
-        UIReference.instance.ClockTimeSetButtonText.text = AlramDataGenerator.instance.tempAlarmSetting.alarm12time;
+        //UIReference.instance.ClockTimeSetButtonText.text = AlramDataGenerator.instance.tempAlarmSetting.alarm12time;
 
     }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5663694172907390064}
   - component: {fileID: 7702884867505594180}
   - component: {fileID: 6341435711281634725}
+  - component: {fileID: 5425973966233328969}
   m_Layer: 5
   m_Name: HomeAlarmButton
   m_TagString: Untagged
@@ -151,6 +152,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &5425973966233328969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020704621503635432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b514d091b5dd5ca43a781f72a2bd51a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textUI: {fileID: 0}
 --- !u!1 &1256487192048914491
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,8 +232,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'AM 08 : 12'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 90b53ac688eaf674bafff58485a92c82, type: 2}
+  m_sharedMaterial: {fileID: -913203181386917713, guid: 90b53ac688eaf674bafff58485a92c82, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

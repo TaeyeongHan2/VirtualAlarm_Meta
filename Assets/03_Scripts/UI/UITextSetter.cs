@@ -11,6 +11,11 @@ public class UITextSetter : MonoBehaviour
     {
         instance = this;
     }
+
+    public void SetClockTimeSetButtonText()
+    {
+        UIReference.instance.ClockTimeSetButtonText.text = DateTime.Now.ToString("tt hh:mm");
+    }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
