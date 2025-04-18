@@ -7,7 +7,7 @@ public class DBAlarm : MonoBehaviour
 {
     public static DBAlarm instance { get; private set; }
     
-    public List<AlarmBase> alarmDataList = new List<AlarmBase>();
+    public Dictionary<GameObject,AlarmBase> alarmDataDict = new Dictionary<GameObject, AlarmBase>();
     
     private void Awake()
     {

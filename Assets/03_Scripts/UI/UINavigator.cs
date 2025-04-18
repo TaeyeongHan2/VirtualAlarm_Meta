@@ -15,6 +15,7 @@ public class UINavigator : MonoBehaviour
     public List<GameObject> homePageAlarmsButtons = new List<GameObject>();
     
     public UIReference uiReference; // 캐싱
+    
     private void Awake()
     {
         instance = this; // 싱글톤용
@@ -39,8 +40,9 @@ public class UINavigator : MonoBehaviour
     public void InitNewAlarm()
     {
         var newAlarmButton =Instantiate(uiReference.HomeAlarmButtonPrefab, uiReference.HomeAlarmListRoot.transform);
-        
         // todo : 실제 알람 데이터 생성
+        AlramDataGenerator.instance.CreateTempAlarmData();
+        //DBAlarm.instance.D
         
         homePageAlarmsButtons.Add(newAlarmButton);
     }
@@ -48,6 +50,7 @@ public class UINavigator : MonoBehaviour
     public void DeleteAlarm(GameObject alarm)
     {
         // todo :실제 알람 데이터 삭제 부분
+        
         
     }
     
