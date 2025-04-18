@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -340790334, guid: 67cc4cb7839cd3741b63733d5adf0442, type: 3}
+  m_Name: Kismet_Hair
+  m_EditorClassIdentifier: 
+  controls:
+  - name: Ear Animation
+    icon: {fileID: 2800000, guid: c63369815bdaa0b4c993638cb9142b86, type: 3}
+    type: 102
+    parameter:
+      name: Ear_move
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Ear Shape
+    icon: {fileID: 2800000, guid: f148c9c7335c8064da24959cb1a8a43a, type: 3}
+    type: 102
+    parameter:
+      name: Ear_Change
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Front Bang
+    icon: {fileID: 2800000, guid: 5a80381c66c0c5040bc09eb41cd1f8f6, type: 3}
+    type: 102
+    parameter:
+      name: Front_Change
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Glasses_Off
+    icon: {fileID: 2800000, guid: b99d18b58f9ba9242a9083c0271d94d7, type: 3}
+    type: 102
+    parameter:
+      name: Glasses_OnOff
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Side_Off
+    icon: {fileID: 2800000, guid: 303df5bcca1b20a4ea122a48914940d2, type: 3}
+    type: 102
+    parameter:
+      name: Side_OnOff
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
+  - name: Back_Off
+    icon: {fileID: 2800000, guid: 303df5bcca1b20a4ea122a48914940d2, type: 3}
+    type: 102
+    parameter:
+      name: Back_OnOff
+    value: 1
+    style: 0
+    subMenu: {fileID: 0}
+    subParameters: []
+    labels: []
