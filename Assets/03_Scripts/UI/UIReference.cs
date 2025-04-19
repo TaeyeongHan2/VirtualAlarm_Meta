@@ -43,11 +43,16 @@ public class UIReference : MonoBehaviour
     public TextMeshProUGUI AutoQuitTimerButtonText;
     public GameObject OKButton;
     public GameObject CancelButton;
-    private void Awake()
+    void Awake()
     {
-
-        instance = this;
-        
+        if (null == instance)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(this.gameObject);
+        }
     }
     void Start()
     {

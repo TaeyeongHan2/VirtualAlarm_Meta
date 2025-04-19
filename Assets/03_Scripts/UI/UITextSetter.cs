@@ -1,4 +1,6 @@
 using System;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UITextSetter : MonoBehaviour
@@ -11,19 +13,23 @@ public class UITextSetter : MonoBehaviour
     {
         instance = this;
     }
+    void Start()
+    {
+        uiReference = UIReference.instance; // 싱글톤 인스턴스를 캐싱
+    }
+
+
 
     public void SetClockTimeSetButtonText()
     {
-        UIReference.instance.ClockTimeSetButtonText.text = DateTime.Now.ToString("tt hh:mm");
-    }
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+        uiReference.ClockTimeSetButtonText.text = DateTime.Now.ToString("tt hh:mm");
     }
 
-    // Update is called once per frame
+    public void SetButtonText(TextMeshProUGUI button, string newText)
+    {
+        button.text = newText;
+    }
+    
     void Update()
     {
         
