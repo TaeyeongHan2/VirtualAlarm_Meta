@@ -7,13 +7,14 @@ using UnityEngine;
 public class AlramDataGenerator : MonoBehaviour
 {
     public static AlramDataGenerator instance{get; private set;}
-
+    public UIReference uiReference;
 
     public string alram24Time;
 
     private void Awake()
     {
         instance = this; // 싱글톤용
+        uiReference = UIReference.instance;
     }
     void Start()
     {
@@ -34,7 +35,7 @@ public class AlramDataGenerator : MonoBehaviour
         setting.alarm12tt = DateTime.Now.ToString("tt");
         setting.alarm12HH = DateTime.Now.ToString("hh");
         setting.alarm12mm = DateTime.Now.ToString("mm");
-        setting.alarm12time = DateTime.Now.ToString("tt hh:mm");
+        setting.alarm12time = uiReference.ClockTimeSetButtonText.text;
 
         setting.isBellOn = true;
         setting.isAUTOQuitOn = false;
