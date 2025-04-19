@@ -41,8 +41,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -103,7 +101,7 @@ ModelImporter:
     blendShapeNormalImportMode: 2
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human:
@@ -285,6 +283,14 @@ ModelImporter:
         modified: 0
     - boneName: RightEye
       humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hair_frontA1
+      humanName: Jaw
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -532,18 +538,18 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Shinano_normal(Clone)
+    - name: Shinano(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: Shinano_body_base
-      parentName: Shinano_normal(Clone)
+    - name: Body_base
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Armature
-      parentName: Shinano_normal(Clone)
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
@@ -1922,73 +1928,73 @@ ModelImporter:
       position: {x: 0.000000008156604, y: 0.07777938, z: -0.000000022351742}
       rotation: {x: 0.00094393943, y: 0.011536139, z: -0.0058366293, w: 0.999916}
       scale: {x: 1.0000001, y: 1, z: 1}
-    - name: Shinano_ear
-      parentName: Shinano_normal(Clone)
+    - name: Other_ear
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-    - name: Shinano_hair_back
-      parentName: Shinano_normal(Clone)
+    - name: Hair_back
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-    - name: Shinano_hair_bang
-      parentName: Shinano_normal(Clone)
+    - name: Hair_bang
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-    - name: Shinano_hair_base
-      parentName: Shinano_normal(Clone)
+    - name: Hair_base
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-    - name: Shinano_hair_side
-      parentName: Shinano_normal(Clone)
+    - name: Hair_side
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-    - name: Shinano_tail
-      parentName: Shinano_normal(Clone)
+    - name: Other_tail
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
     - name: Body
-      parentName: Shinano_normal(Clone)
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-    - name: Shinano_boots
-      parentName: Shinano_normal(Clone)
+    - name: Cloth_boots
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-    - name: Shinano_bra
-      parentName: Shinano_normal(Clone)
+    - name: Cloth_under_bra
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
-    - name: Shinano_dress
-      parentName: Shinano_normal(Clone)
+    - name: Cloth_dress
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
-    - name: Shinano_shorts
-      parentName: Shinano_normal(Clone)
+    - name: Cloth_under_shorts
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
-    - name: Shinano_skirt
-      parentName: Shinano_normal(Clone)
+    - name: Cloth_skirt
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-    - name: Shinano_sweater
-      parentName: Shinano_normal(Clone)
+    - name: Cloth_sweater
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
-    - name: Shinano_tights
-      parentName: Shinano_normal(Clone)
+    - name: Cloth_tights
+      parentName: Shinano(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
       scale: {x: 1, y: 1, z: 1}
