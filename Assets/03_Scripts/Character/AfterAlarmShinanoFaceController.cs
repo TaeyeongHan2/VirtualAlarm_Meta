@@ -8,6 +8,7 @@ public class AfterAlarmShinanoFaceController : MonoBehaviour
 
    private void Start()
    {
+       
        StartCoroutine(FaceSequence());
    }
 
