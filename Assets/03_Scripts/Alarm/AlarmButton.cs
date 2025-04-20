@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using System.Text;
 using _03_Scripts.Alarm;
 using TMPro;
 using UnityEngine;
@@ -20,7 +22,14 @@ public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void SetData(AlarmBase alarmBase)
     {
-        textUI.text = $"{alarmBase.alarm12time}";
+        StringBuilder reapeatDaysSB = new StringBuilder();
+        var trueKeys = alarmBase.alarmRepeatDays.Where(x => x.Value == true).Select(x => x.Key);
+        foreach (var key in trueKeys)
+            reapeatDaysSB.Append(key).Append(" ");
+
+        
+        textUI.text = $"{alarmBase.alarm12time}\n" +
+                      $"{reapeatDaysSB.ToString()}";
     }
 
     public void OnBeginDrag(PointerEventData eventData)

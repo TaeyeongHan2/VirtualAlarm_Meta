@@ -41,7 +41,7 @@ public class AlramDataGenerator : MonoBehaviour
         setting.isAUTOQuitOn = false;
         
         setting.alarmRepeatDays = new Dictionary<string, bool>();
-        setting.alarmRepeatDays["Monday"] = false;
+        setting.alarmRepeatDays["Monday"] = MondayButton.Instance.isActive;
         setting.alarmRepeatDays["Tuesday"] = false;
         setting.alarmRepeatDays["Wednesday"] = false;
         setting.alarmRepeatDays["Thursday"] = false;
