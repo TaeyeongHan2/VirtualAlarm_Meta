@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance { get;private set; }
     public UIReference uiReference; // 캐싱
     public List<GameObject> homePageAlarmsButtons = new List<GameObject>();
+    public List<AlarmBase> alarmDataList = new List<AlarmBase>();
+
 
     void Awake()
     {
@@ -17,23 +19,31 @@ public class UIManager : MonoBehaviour
         uiReference = UIReference.instance; // 싱글톤 인스턴스를 캐싱
     }
     
-    // 새 알람 생성 매소드
     public void InitNewAlarm()
     {
         var newAlarmButton = Instantiate(uiReference.HomeAlarmButtonPrefab, uiReference.HomeAlarmListRoot.transform);
         // todo : 실제 알람 데이터 생성
-        AlarmBase alarmBase = AlramDataGenerator.instance.CreateAlarmData();
+        AlarmBase alarmData = AlramDataGenerator.instance.CreateAlarmData();
         AlarmButton alarmButton = newAlarmButton.GetComponent<AlarmButton>();
-        alarmButton.SetData(alarmBase);
+        alarmButton.SetData(alarmData);
         
         homePageAlarmsButtons.Add(newAlarmButton);
+        alarmDataList.Add(alarmData);
     }
 
-    public void DeleteAlarm(GameObject alarm)
+    public void DeleteAlarm(GameObject alarmObject, AlarmBase alarmData)
     {
-        // todo :실제 알람 데이터 삭제 부분
-        
-        
+        if (homePageAlarmsButtons.Contains(alarmObject))
+        {
+            homePageAlarmsButtons.Remove(alarmObject);
+        }
+    
+        if (alarmDataList.Contains(alarmData))
+        {
+            alarmDataList.Remove(alarmData);
+        }
+    
+        Debug.Log($"알람 수: {homePageAlarmsButtons.Count}, 데이터 수 : {alarmDataList.Count}");
     }
 
     void Update()

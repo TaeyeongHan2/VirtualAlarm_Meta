@@ -10,6 +10,8 @@ using UnityEngine.UI;
 
 public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    public AlarmBase alarmData; // 이 버튼과 관련된 알람 설정 캐싱
+    
     public TMP_Text[] textUIs;
     public TMP_Text timeTextUI;
     
@@ -61,10 +63,10 @@ public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         buttonImage = GetComponentInChildren<Image>();
     }
     
-    
-
     public void SetData(AlarmBase alarmBase)
     {
+        alarmData = alarmBase; // 캐싱
+        
         StringBuilder reapeatDaysSB = new StringBuilder();
         var trueKeys = alarmBase.alarmRepeatDays.Where(x => x.Value == true).Select(x => x.Key);
         foreach (var key in trueKeys)
@@ -75,6 +77,7 @@ public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
         timeTextUI.text = $"{alarmBase.alarm12time}\n";
     }
+
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -89,13 +92,12 @@ public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("OnDrag");
-        //var originalPosition = eventData.position;
 
         if (eventData.delta.sqrMagnitude > dragCheckSensitivity)
         {
+            UIManager.Instance.DeleteAlarm(gameObject, alarmData);
             Destroy(gameObject);
         }
-        
     }
 
     public void OnEndDrag(PointerEventData eventData)
