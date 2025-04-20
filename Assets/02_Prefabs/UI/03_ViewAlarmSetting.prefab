@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 5821140070360473924}
   - component: {fileID: 1179382907573565423}
   - component: {fileID: 7676456829303666180}
+  - component: {fileID: 3079258321471267031}
   m_Layer: 5
   m_Name: TuesdayButton
   m_TagString: Untagged
@@ -265,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -325,7 +326,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1179382907573565423}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3079258321471267031}
+        m_TargetAssemblyTypeName: TuesdayButton, Assembly-CSharp
+        m_MethodName: ChageButtonState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3079258321471267031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308473013041932970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0932425b2e0304e6b838387945a2c89f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
+  image: {fileID: 0}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1626586793318138758
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +825,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2935708043536233575}
         m_TargetAssemblyTypeName: MondayButton, Assembly-CSharp
-        m_MethodName: ChageButtonColor
+        m_MethodName: ChageButtonState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -820,7 +848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 0
-  Image: {fileID: 0}
+  image: {fileID: 0}
   currentColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2257689317351679326
 GameObject:
@@ -970,6 +998,7 @@ GameObject:
   - component: {fileID: 6386943180111426595}
   - component: {fileID: 8785121805635539753}
   - component: {fileID: 6506459418890937624}
+  - component: {fileID: 998326784879925306}
   m_Layer: 5
   m_Name: FridayButton
   m_TagString: Untagged
@@ -1018,7 +1047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1078,7 +1107,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8785121805635539753}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 998326784879925306}
+        m_TargetAssemblyTypeName: FridayButton, Assembly-CSharp
+        m_MethodName: ChageButtonState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &998326784879925306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2474809392186190157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db20a589edf914a06b9afa2cd221a425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
+  image: {fileID: 0}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3078220651631003407
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,6 +1147,7 @@ GameObject:
   - component: {fileID: 1117400485620610962}
   - component: {fileID: 8804278958503472944}
   - component: {fileID: 5829073670140364151}
+  - component: {fileID: 2585694099496015078}
   m_Layer: 5
   m_Name: ThursdayButton
   m_TagString: Untagged
@@ -1139,7 +1196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1199,7 +1256,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8804278958503472944}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2585694099496015078}
+        m_TargetAssemblyTypeName: ThursdayButton, Assembly-CSharp
+        m_MethodName: ChageButtonState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2585694099496015078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3078220651631003407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 257f5feb26bff461a966de9fdadfd60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
+  image: {fileID: 0}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3159711011251866685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,6 +1429,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2935708043536233575}
+        m_TargetAssemblyTypeName: MondayButton, Assembly-CSharp
+        m_MethodName: Init
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3669012941962270971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,6 +1574,7 @@ GameObject:
   - component: {fileID: 7331103116864808952}
   - component: {fileID: 6871473339292328532}
   - component: {fileID: 9214133806881818180}
+  - component: {fileID: 3600909941368166862}
   m_Layer: 5
   m_Name: SundayButton
   m_TagString: Untagged
@@ -1526,7 +1623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1586,7 +1683,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6871473339292328532}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3600909941368166862}
+        m_TargetAssemblyTypeName: SundayButton, Assembly-CSharp
+        m_MethodName: ChageButtonState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3600909941368166862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3832143752909169738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8421c9df524774c458b5c8669bfef930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
+  image: {fileID: 0}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3935460048722276317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2826,6 +2950,7 @@ GameObject:
   - component: {fileID: 2322712300140350338}
   - component: {fileID: 2954884760749919232}
   - component: {fileID: 4289201213151549166}
+  - component: {fileID: 6092857291690704063}
   m_Layer: 5
   m_Name: SaturdayButton
   m_TagString: Untagged
@@ -2874,7 +2999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2934,7 +3059,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2954884760749919232}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6092857291690704063}
+        m_TargetAssemblyTypeName: SaturdayButton, Assembly-CSharp
+        m_MethodName: ChageButtonState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6092857291690704063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7399432970121825342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0932c71798b44f7a55dbb5d3131e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
+  image: {fileID: 0}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7489260935269645561
 GameObject:
   m_ObjectHideFlags: 0
@@ -3355,6 +3507,7 @@ GameObject:
   - component: {fileID: 5854377592533160499}
   - component: {fileID: 5163741842540427833}
   - component: {fileID: 8791836835882866684}
+  - component: {fileID: 4699165905146870288}
   m_Layer: 5
   m_Name: WednesdayButton
   m_TagString: Untagged
@@ -3403,7 +3556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3463,7 +3616,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5163741842540427833}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4699165905146870288}
+        m_TargetAssemblyTypeName: WednesdayButton, Assembly-CSharp
+        m_MethodName: ChageButtonState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4699165905146870288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8081525275754420100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cda3df4509ee4406ca69633f13f67428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
+  image: {fileID: 0}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8396395108747609048
 GameObject:
   m_ObjectHideFlags: 0

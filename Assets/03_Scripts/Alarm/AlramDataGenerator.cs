@@ -41,13 +41,13 @@ public class AlramDataGenerator : MonoBehaviour
         setting.isAUTOQuitOn = false;
         
         setting.alarmRepeatDays = new Dictionary<string, bool>();
-        setting.alarmRepeatDays["Monday"] = MondayButton.Instance.isActive;
-        setting.alarmRepeatDays["Tuesday"] = false;
-        setting.alarmRepeatDays["Wednesday"] = false;
-        setting.alarmRepeatDays["Thursday"] = false;
-        setting.alarmRepeatDays["Friday"] = false;
-        setting.alarmRepeatDays["Saturday"] = false;
-        setting.alarmRepeatDays["Sunday"] = false;
+        setting.alarmRepeatDays["월"] = MondayButton.Instance.isActive;
+        setting.alarmRepeatDays["화"] = TuesdayButton.Instance.isActive;
+        setting.alarmRepeatDays["수"] = WednesdayButton.Instance.isActive;
+        setting.alarmRepeatDays["목"] = ThursdayButton.Instance.isActive;
+        setting.alarmRepeatDays["금"] = FridayButton.Instance.isActive;
+        setting.alarmRepeatDays["토"] = SaturdayButton.Instance.isActive;
+        setting.alarmRepeatDays["일"] = SundayButton.Instance.isActive;
 
         return setting;
     }
