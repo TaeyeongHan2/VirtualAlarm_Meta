@@ -43,11 +43,23 @@ public class UIReference : MonoBehaviour
     public TextMeshProUGUI AutoQuitTimerButtonText;
     public GameObject OKButton;
     public GameObject CancelButton;
-    private void Awake()
+    [Header("Ringing - VIEW")] 
+    public GameObject currentTimeButton;
+    public TextMeshProUGUI currentTimeButtonText;
+    public GameObject ARButton;
+    
+    [Header("Sounds")]
+    public AudioSource alarmMusic;
+    void Awake()
     {
-
-        instance = this;
-        
+        if (null == instance)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(this.gameObject);
+        }
     }
     void Start()
     {
