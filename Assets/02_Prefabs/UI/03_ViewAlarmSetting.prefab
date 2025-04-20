@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 8696101057393569017}
   - component: {fileID: 6672790110772035822}
   - component: {fileID: 8890211081148273681}
+  - component: {fileID: 5889316454036237408}
   m_Layer: 5
   m_Name: AutoQuitTimerButton
   m_TagString: Untagged
@@ -564,7 +565,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6672790110772035822}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5889316454036237408}
+        m_TargetAssemblyTypeName: AutoQuitTimerButton, Assembly-CSharp
+        m_MethodName: ChageButtonState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5889316454036237408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895676207830401969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22a05e8676ce416a99723a4f94d1c18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minutes: 0
+  image: {fileID: 0}
+  text: {fileID: 0}
 --- !u!1 &2088584176982724754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,6 +1481,7 @@ GameObject:
   - component: {fileID: 12128831398426853}
   - component: {fileID: 8034159896231420795}
   - component: {fileID: 277926705682823251}
+  - component: {fileID: 6457404386899487321}
   m_Layer: 5
   m_Name: AutoQuitAlarmButton
   m_TagString: Untagged
@@ -1561,7 +1590,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8034159896231420795}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6457404386899487321}
+        m_TargetAssemblyTypeName: AutoQuitAlarmButton, Assembly-CSharp
+        m_MethodName: ChageButtonState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6457404386899487321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3669012941962270971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2d6d6a2db0e44f9e8b55ea88885949d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
+  image: {fileID: 0}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3832143752909169738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,6 +2803,7 @@ GameObject:
   - component: {fileID: 3731621655513772014}
   - component: {fileID: 1481740052020865939}
   - component: {fileID: 8254369501311650355}
+  - component: {fileID: 1812854095693874088}
   m_Layer: 5
   m_Name: BellTurnOnOffButton
   m_TagString: Untagged
@@ -2855,7 +2912,37 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1481740052020865939}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1812854095693874088}
+        m_TargetAssemblyTypeName: BellTurnOnOffButton, Assembly-CSharp
+        m_MethodName: ChageButtonState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1812854095693874088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6544946289955576153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 755178bee8a1c4389a8ee83e8ca30459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
+  image: {fileID: 0}
+  currentColor: {r: 0, g: 0, b: 0, a: 0}
+  text: {fileID: 0}
+  bellOnText: BELL ON
+  bellOffText: BELL OFF
 --- !u!1 &7275805885408518916
 GameObject:
   m_ObjectHideFlags: 0
@@ -3152,7 +3239,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BELL or VIBRATE
+  m_text: BELL ON
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

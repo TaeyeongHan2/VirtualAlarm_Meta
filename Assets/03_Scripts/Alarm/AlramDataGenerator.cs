@@ -37,9 +37,10 @@ public class AlramDataGenerator : MonoBehaviour
         setting.alarm12mm = DateTime.Now.ToString("mm");
         setting.alarm12time = uiReference.ClockTimeSetButtonText.text;
 
-        setting.isBellOn = true;
-        setting.isAUTOQuitOn = false;
-        
+        setting.isBellOn = BellTurnOnOffButton.Instance.isActive;
+        setting.isAUTOQuitOn = AutoQuitAlarmButton.Instance.isActive;
+        setting.AUTOQuitMinutes = AutoQuitTimerButton.Instance.minutes;
+            
         setting.alarmRepeatDays = new Dictionary<string, bool>();
         setting.alarmRepeatDays["월"] = MondayButton.Instance.isActive;
         setting.alarmRepeatDays["화"] = TuesdayButton.Instance.isActive;
