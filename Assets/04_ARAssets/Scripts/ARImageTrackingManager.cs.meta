@@ -1,2 +1,16 @@
 fileFormatVersion: 2
 guid: 4d65ffaf5a1ff7046ad31d6da0fa2b7d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - trackedImageManager: {instanceID: 0}
+  - modelPrefab: {instanceID: 0}
+  - afterAlarmShinanoPrefab: {fileID: 8082317988980657062, guid: 116c772af88e36049bd5d122da08c6fe, type: 3}
+  - earlyWakeShinanoPrefab: {fileID: 4727298759780481091, guid: 1444bdb71375a1d4a83744ff369e85b6, type: 3}
+  - wakeUpLateShinanoPrefab: {fileID: 7281998952165490333, guid: 5f0978c32a5dea14c8ce1283dd375a12, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
