@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Head
+  - Hand
+  - Model
   layers:
   - Default
   - TransparentFX
@@ -17,9 +20,9 @@ TagManager:
   - Muse Animate Environment
   - 
   - 
-  - 
-  - 
-  - 
+  - Head
+  - Hand
+  - Model
   - 
   - 
   - 
