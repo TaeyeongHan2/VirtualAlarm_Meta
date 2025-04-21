@@ -6,6 +6,8 @@ public class ARModelTouchInteraction : MonoBehaviour
 {
     private static readonly int Wave = Animator.StringToHash("Wave");
     private static readonly int Nod = Animator.StringToHash("Nod");
+    private static readonly int Jump = Animator.StringToHash("Jump");
+    private static readonly int Dance = Animator.StringToHash("Dance");
 
     [SerializeField] 
     private Camera arCamera;
@@ -42,22 +44,6 @@ public class ARModelTouchInteraction : MonoBehaviour
             return;
         }
         
-        // 더블 탭 감지
-        foreach (var t in Touchscreen.current.touches)
-        {
-            if (t.press.wasPressedThisFrame)
-            {
-                float now = Time.time;
-                if (tapCount == 1 && now - lastTapTime < doubleTapMaxDelay)
-                {
-                    // 더블 탭! 인사
-                    if (modelAnimator != null)
-                    {
-                        tapCount = 0;
-                    }
-                }
-            }
-        }
         
         // 멀티 터치 땐 return -> 애니메이션 처리 x
         int activeTouchCount = 0;
@@ -73,6 +59,38 @@ public class ARModelTouchInteraction : MonoBehaviour
         {
             return;
         }
+        
+        // 더블 탭 감지
+        if (activeTouchCount == 1)
+        {
+            foreach (var t in Touchscreen.current.touches)
+            {
+                if (t.press.wasReleasedThisFrame)
+                {
+                    float now = Time.time;
+                    if (tapCount == 1 && now - lastTapTime < doubleTapMaxDelay)
+                    {
+                        // 더블 탭! 인사
+                        if (modelAnimator != null)
+                        {
+                            Debug.Log("Double Tap : Animation Start");
+                            modelAnimator.SetTrigger(Dance);
+                        }
+                        else
+                        {
+                            Debug.Log("Animator is NULL");
+                        }
+                        tapCount = 0;
+                    }
+                    else
+                    {
+                        tapCount = 1;
+                        lastTapTime = now;
+                    }
+                }
+            }
+        }
+        
         
         // 2. 한 손가락 탭 입력 감지
         foreach (var t in Touchscreen.current.touches)
@@ -113,10 +131,10 @@ public class ARModelTouchInteraction : MonoBehaviour
                 {
                     foreach (var hit in hits)
                     {
-                        if (hit.collider.CompareTag("Model"))
+                        if (hit.collider.CompareTag("Foot"))
                         {
                             foundHit = hit;
-                            hitTag = "Model";
+                            hitTag = "Foot";
                             break;
                         }
                     }
@@ -135,9 +153,9 @@ public class ARModelTouchInteraction : MonoBehaviour
                         modelAnimator.SetTrigger(Wave);
                         Debug.Log("Hand touch animation start");
                     }
-                    else if (hitTag == "Model")
+                    else if (hitTag == "Foot")
                     {
-                        
+                        modelAnimator.SetTrigger(Jump);
                         Debug.Log("Model touch animation start");
                     }
                 }
