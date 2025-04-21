@@ -255,6 +255,9 @@ MonoBehaviour:
   markerName: SampleMarker
   moveRadius: 0.01
   moveSpeed: 0.005
+  afterAlarmShinanoPrefab: {fileID: 0}
+  earlyWakeShinanoPrefab: {fileID: 0}
+  wakeUpLateShinanoPrefab: {fileID: 0}
 --- !u!4 &65312752
 Transform:
   m_ObjectHideFlags: 0
