@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using _03_Scripts.Alarm;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -11,8 +13,6 @@ public class UINavigator : MonoBehaviour
     public GameObject[] pagePrefabsArray;
     public GameObject currentPage;
     public int currentPageIndex;
-
-    public List<GameObject> homePageAlarmsButtons = new List<GameObject>();
     
     public UIReference uiReference; // 캐싱
     
@@ -36,26 +36,9 @@ public class UINavigator : MonoBehaviour
 
     }
 
-    // 새 알람 생성 매소드
-    public void InitNewAlarm()
-    {
-        var newAlarmButton =Instantiate(uiReference.HomeAlarmButtonPrefab, uiReference.HomeAlarmListRoot.transform);
-        // todo : 실제 알람 데이터 생성
-        AlramDataGenerator.instance.CreateTempAlarmData();
-        //DBAlarm.instance.D
-        
-        homePageAlarmsButtons.Add(newAlarmButton);
-    }
-
-    public void DeleteAlarm(GameObject alarm)
-    {
-        // todo :실제 알람 데이터 삭제 부분
-        
-        
-    }
-    
     private IEnumerator Start()
     {
+        uiReference = UIReference.instance;
         yield return new WaitForSeconds(1f);
         ChangePage(1);
 

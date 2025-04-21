@@ -7,48 +7,50 @@ using UnityEngine;
 public class AlramDataGenerator : MonoBehaviour
 {
     public static AlramDataGenerator instance{get; private set;}
-
-    public AlarmBase tempAlarmSetting = new AlarmBase();
+    public UIReference uiReference;
 
     public string alram24Time;
 
     private void Awake()
     {
         instance = this; // 싱글톤용
+        uiReference = UIReference.instance;
     }
     void Start()
     {
         
     }
 
-    public void CreateTempAlarmData()
+    public AlarmBase CreateAlarmData()
     {
-        
-        tempAlarmSetting.alarm24Hour = int.Parse(DateTime.Now.ToString("HH"));
-        tempAlarmSetting.alarm24Minute = int.Parse(DateTime.Now.ToString("mm"));
+        AlarmBase setting = new AlarmBase();
+        setting.alarm24Hour = int.Parse(DateTime.Now.ToString("HH"));
+        setting.alarm24Minute = int.Parse(DateTime.Now.ToString("mm"));
 
         StringBuilder sb24Time = new StringBuilder();
-        sb24Time.Append(tempAlarmSetting.alarm24Hour);
-        sb24Time.Append(tempAlarmSetting.alarm24Minute);
-        tempAlarmSetting.alarm24Time = sb24Time.ToString();
+        sb24Time.Append(setting.alarm24Hour);
+        sb24Time.Append(setting.alarm24Minute);
+        setting.alarm24Time = sb24Time.ToString();
         
-        tempAlarmSetting.alarm12tt = DateTime.Now.ToString("tt");
-        tempAlarmSetting.alarm12HH = DateTime.Now.ToString("HH");
-        tempAlarmSetting.alarm12mm = DateTime.Now.ToString("mm");
-        tempAlarmSetting.alarm12time = DateTime.Now.ToString("tt HH:mm");
+        setting.alarm12tt = DateTime.Now.ToString("tt");
+        setting.alarm12HH = DateTime.Now.ToString("hh");
+        setting.alarm12mm = DateTime.Now.ToString("mm");
+        setting.alarm12time = uiReference.ClockTimeSetButtonText.text;
 
-        tempAlarmSetting.isBellOn = true;
-        tempAlarmSetting.isAUTOQuitOn = false;
-        
-        tempAlarmSetting.alarmRepeatDays = new Dictionary<string, bool>();
-        tempAlarmSetting.alarmRepeatDays["Monday"] = false;
-        tempAlarmSetting.alarmRepeatDays["Tuesday"] = false;
-        tempAlarmSetting.alarmRepeatDays["Wednesday"] = false;
-        tempAlarmSetting.alarmRepeatDays["Thursday"] = false;
-        tempAlarmSetting.alarmRepeatDays["Friday"] = false;
-        tempAlarmSetting.alarmRepeatDays["Saturday"] = false;
-        tempAlarmSetting.alarmRepeatDays["Sunday"] = false;
+        setting.isBellOn = BellTurnOnOffButton.Instance.isActive;
+        setting.isAUTOQuitOn = AutoQuitAlarmButton.Instance.isActive;
+        setting.AUTOQuitMinutes = AutoQuitTimerButton.Instance.minutes;
+            
+        setting.alarmRepeatDays = new Dictionary<string, bool>();
+        setting.alarmRepeatDays["월"] = MondayButton.Instance.isActive;
+        setting.alarmRepeatDays["화"] = TuesdayButton.Instance.isActive;
+        setting.alarmRepeatDays["수"] = WednesdayButton.Instance.isActive;
+        setting.alarmRepeatDays["목"] = ThursdayButton.Instance.isActive;
+        setting.alarmRepeatDays["금"] = FridayButton.Instance.isActive;
+        setting.alarmRepeatDays["토"] = SaturdayButton.Instance.isActive;
+        setting.alarmRepeatDays["일"] = SundayButton.Instance.isActive;
 
+        return setting;
     }
 
     public void saveAlarmData(AlarmBase alarm)
