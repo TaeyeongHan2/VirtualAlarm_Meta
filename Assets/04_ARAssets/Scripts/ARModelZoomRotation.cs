@@ -9,6 +9,8 @@ public class ARModelZoomRotation : MonoBehaviour
     public Transform modelTransform;
     [SerializeField]
     private Camera arCamera;
+    [SerializeField]
+    private ARImageTrackingManager arImageTrackingManager;
     
     [Header("Zoom/Rotation Settings")]
     public float zoomSpeed = 0.002f;
@@ -134,6 +136,7 @@ public class ARModelZoomRotation : MonoBehaviour
         return false;
     }
 
+    // Reset 버튼
     public void ResetZoomAndRotation()
     {
         if (headTransform != null)
@@ -141,9 +144,15 @@ public class ARModelZoomRotation : MonoBehaviour
             headTransform.localScale = originalScale;
         }
 
-        if (modelTransform != null)
+        if (modelTransform != null && arImageTrackingManager != null)
         {
-            modelTransform.rotation = originalRotation;
+            var trackedImage = arImageTrackingManager.GetCurrentlyTrackingImage();
+            if (trackedImage != null)
+            {
+                modelTransform.rotation = trackedImage.transform.rotation *
+                                          Quaternion.Euler(0f, arImageTrackingManager.modelYRotationOffset, 0f);
+            }
+            
         }
         Debug.Log("UI Btn Click : Zoom/Rotation Reset");
     }
