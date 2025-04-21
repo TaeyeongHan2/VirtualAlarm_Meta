@@ -28,7 +28,7 @@ public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     
     public Image buttonImage;
     private String _textBeforeDraged;
-    public float dragCheckSensitivity = 100f;
+    public float dragCheckSensitivity = 500f;
     public String UITextOnDraging = "Swape to Delete"; 
     private void Awake()
     {
@@ -107,7 +107,7 @@ public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         {
             timeTextUI.text = _textBeforeDraged;
             foreach (var v in daysTextUI)
-                v.gameObject.SetActive(false);
+                v.gameObject.SetActive(true);
         }
 
     }
