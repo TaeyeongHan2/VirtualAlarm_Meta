@@ -324,6 +324,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TriMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _1st2nd_Shades_Feather: 0.04
@@ -598,6 +602,7 @@ Material:
     - _MatCapEnableLighting: 1
     - _MatCapLod: 5.33
     - _MatCapMainStrength: 0
+    - _MatCapMul: 0
     - _MatCapNormalStrength: 1
     - _MatCapPerspective: 1
     - _MatCapShadowMask: 0.3

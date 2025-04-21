@@ -234,12 +234,21 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: Facial Expression
     m_StateMachine: {fileID: -820114377778126842}
-    m_Mask: {fileID: 0}
-    m_Motions: []
+    m_Mask: {fileID: 31900000, guid: 5a45924a555daf849a2e85ba4313fd68, type: 2}
+    m_Motions:
+    - serializedVersion: 2
+      m_State: {fileID: 874197668969404790}
+      m_Motion: {fileID: 7400000, guid: 40d00ad4bc80ac147a65d4167ca8b1b6, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: -2507434585706772010}
+      m_Motion: {fileID: 7400000, guid: 912c1092e9cc82f48a5fb18ae22af8b0, type: 2}
+    - serializedVersion: 2
+      m_State: {fileID: -35804105037053367}
+      m_Motion: {fileID: 7400000, guid: a21a69a9bc9f4294c898eea23dd32d84, type: 2}
     m_Behaviours: []
     m_BlendingMode: 0
-    m_SyncedLayerIndex: -1
-    m_DefaultWeight: 0
+    m_SyncedLayerIndex: 1
+    m_DefaultWeight: 1
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
@@ -284,7 +293,7 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.49999952
+  m_TransitionDuration: 0.5
   m_TransitionOffset: 0.0074463636
   m_ExitTime: 1.0104592
   m_HasExitTime: 1
