@@ -260,6 +260,9 @@ MonoBehaviour:
   onTimeAnimatorController: {fileID: 9100000, guid: 4afce73be47cfe840a1fce85982309a1, type: 2}
   lateAnimatorController: {fileID: 9100000, guid: 20d8074780782d241842af312ab70642, type: 2}
   wakeUpStatus: onTime
+  afterAlarmShinanoPrefab: {fileID: 0}
+  earlyWakeShinanoPrefab: {fileID: 0}
+  wakeUpLateShinanoPrefab: {fileID: 0}
 --- !u!4 &65312752
 Transform:
   m_ObjectHideFlags: 0
