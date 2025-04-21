@@ -8,7 +8,9 @@ namespace _03_Scripts.Alarm
         public int alarm24Hour;
         public int alarm24Minute;
 
-        public string alarm12time;
+        public string alarm12time; /// <summary>
+                                   ///  tt hh:mm
+                                   /// </summary>
         public string alarm12tt;
         public string alarm12HH;
         public string alarm12mm;
