@@ -38,7 +38,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AnisotropyTangentMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: dc0ecb1e9efb7c84494a9146de1d988b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AudioLinkLocalMap:
@@ -54,11 +54,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
-        m_Texture: {fileID: 2800000, guid: 652134c0d3acb2c4dbdc0b6c2418e4b8, type: 3}
+        m_Texture: {fileID: 2800000, guid: c44cace1e94cff14599870eeb87517cf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 652134c0d3acb2c4dbdc0b6c2418e4b8, type: 3}
+        m_Texture: {fileID: 2800000, guid: c44cace1e94cff14599870eeb87517cf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Bump2ndMap:
@@ -70,7 +70,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 170d8257381a5194aad75b99955b6656, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -110,7 +110,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionBlendMask:
-        m_Texture: {fileID: 2800000, guid: bbd2259c6b54f7b47be403d0df7796c0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 170d8257381a5194aad75b99955b6656, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionGradTex:
@@ -162,7 +162,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainColorAdjustMask:
-        m_Texture: {fileID: 2800000, guid: 381f25f91e9526449a68fca986256a82, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6a87791da798a9d4c8f57fb50f2195b7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainGradationTex:
@@ -170,7 +170,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 652134c0d3acb2c4dbdc0b6c2418e4b8, type: 3}
+        m_Texture: {fileID: 2800000, guid: c44cace1e94cff14599870eeb87517cf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatCap2ndBlendMask:
@@ -194,7 +194,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MatCapTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 170d8257381a5194aad75b99955b6656, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -258,7 +258,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ShadowStrengthMask:
-        m_Texture: {fileID: 2800000, guid: 39186decaf6621f4a9dbe8cd0d030b52, type: 3}
+        m_Texture: {fileID: 2800000, guid: 170d8257381a5194aad75b99955b6656, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SmoothnessTex:
@@ -404,7 +404,7 @@ Material:
     - _EmissionBlendMode: 1
     - _EmissionFluorescence: 0
     - _EmissionGradSpeed: 100
-    - _EmissionMainStrength: 1
+    - _EmissionMainStrength: 0
     - _EmissionMap_UVMode: 0
     - _EmissionParallaxDepth: 0
     - _EmissionUseGrad: 0
@@ -698,7 +698,7 @@ Material:
     - _UseBumpMap: 0
     - _UseClippingCanceller: 0
     - _UseDither: 0
-    - _UseEmission: 1
+    - _UseEmission: 0
     - _UseEmission2nd: 0
     - _UseGlitter: 0
     - _UseMain2ndTex: 0
