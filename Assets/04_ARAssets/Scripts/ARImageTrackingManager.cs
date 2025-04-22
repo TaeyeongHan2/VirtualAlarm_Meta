@@ -11,6 +11,9 @@ public class ARImageTrackingManager : MonoBehaviour
     [SerializeField] 
     private string markerName;
     
+    [SerializeField]
+    private AlarmManager alarmManager;
+    
     [Header("Model 정렬")]
     public float modelYRotationOffset = 180f;
     [SerializeField] 
@@ -62,6 +65,9 @@ public class ARImageTrackingManager : MonoBehaviour
                 {
                     // 마커를 처음 인식한 순간 -> 현재 시간과 알람 시간 비교
                     DateTime now = DateTime.Now;
+                    var currentHours = now.Hour;
+                    var currentMinutes = now.Minute;
+                    var currentTotalMin = currentHours * 60 + currentMinutes;
                     
                     // UI manager에서 현재 설정된 알람 리스트를 불러옴
                     var alarmList = UIManager.Instance.alarmDataList;
@@ -72,24 +78,44 @@ public class ARImageTrackingManager : MonoBehaviour
                     }
                     
                     // 마지막으로 설정된 알람을 기준으로 DateTime 객체 생성
-                    var latestAlarm = alarmList[alarmList.Count - 1];
-                    DateTime alarmTime = new DateTime(now.Year, now.Month, now.Day,
-                        latestAlarm.alarm24Hour, latestAlarm.alarm24Minute, 0);
+                    var settedAlarmTime = AlarmManager.currentTotalMin;
+                    var standard = settedAlarmTime + 3;
                     
                     // 현재 시간과 알람 시간 차이 비교하여 사용자의 일어남 상태 확인하여 상태에 저장
-                    TimeSpan diff = now - alarmTime;
-                    if (now < alarmTime)
+                    if (currentTotalMin > standard )
+                    {
+                        wakeUpStatus = "late";
+                    }
+                    else if(settedAlarmTime > currentTotalMin)
                     {
                         wakeUpStatus = "early";
                     }
-                    else if (diff.TotalMinutes <= 3)
+                    else if (currentTotalMin <= standard && settedAlarmTime < currentTotalMin)
                     {
                         wakeUpStatus = "onTime";
                     }
                     else
                     {
-                        wakeUpStatus = "late";
+                        Debug.Log("error");
                     }
+                    
+                    // DateTime alarmTime = new DateTime(now.Year, now.Month, now.Day,
+                    //     latestAlarm.alarm24Hour, latestAlarm.alarm24Minute, 0);
+                    
+                    // 현재 시간과 알람 시간 차이 비교하여 사용자의 일어남 상태 확인하여 상태에 저장
+                    // TimeSpan diff = now - alarmTime;
+                    // if (now < alarmTime)
+                    // {
+                    //     wakeUpStatus = "early";
+                    // }
+                    // else if (diff.TotalMinutes <= 3)
+                    // {
+                    //     wakeUpStatus = "onTime";
+                    // }
+                    // else
+                    // {
+                    //     wakeUpStatus = "late";
+                    // }
                     
                     // Animator Controller change
                     if (modelAnimator != null)

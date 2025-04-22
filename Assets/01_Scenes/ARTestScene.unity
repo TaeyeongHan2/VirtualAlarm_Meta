@@ -253,6 +253,7 @@ MonoBehaviour:
   trackedImageManager: {fileID: 1215352194}
   modelPrefab: {fileID: 8657302760341133805}
   markerName: SampleMarker
+  alarmManager: {fileID: 0}
   modelYRotationOffset: 180
   modelYoffset: 0
   modelAnimator: {fileID: 4162002442684235576}
@@ -260,9 +261,6 @@ MonoBehaviour:
   onTimeAnimatorController: {fileID: 9100000, guid: 4afce73be47cfe840a1fce85982309a1, type: 2}
   lateAnimatorController: {fileID: 9100000, guid: 20d8074780782d241842af312ab70642, type: 2}
   wakeUpStatus: onTime
-  afterAlarmShinanoPrefab: {fileID: 0}
-  earlyWakeShinanoPrefab: {fileID: 0}
-  wakeUpLateShinanoPrefab: {fileID: 0}
 --- !u!4 &65312752
 Transform:
   m_ObjectHideFlags: 0

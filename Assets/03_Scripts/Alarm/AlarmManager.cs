@@ -1,11 +1,13 @@
 using System;
 using System.Collections;
+using _03_Scripts.Alarm;
 using UnityEngine;
 
 public class AlarmManager : MonoBehaviour
 {
     private Coroutine alarmCheckCoroutine; // 추후 코루틴을 종료해야할 때를 대비해서 IEnumerator 캐싱
-
+    public static AlarmBase currentAlarmData;
+    public static int currentTotalMin;
     void Awake()
     {
         // todo : 코루틴의 최초 실행 시점을 알람이 생성될 때로 옮겨 성능 향상 시도하기
@@ -32,7 +34,10 @@ public class AlarmManager : MonoBehaviour
             if (alarmDataList[i].alarm12time == now12)
             {
                 Debug.Log("벨이 울립니다");
-                var currentAlarmData = alarmDataList[i];
+                currentAlarmData = alarmDataList[i];
+                var currentHours = DateTime.Now.Hour;
+                var currentMinutes = DateTime.Now.Minute;
+                currentTotalMin = currentHours * 60 + currentMinutes;
                 var isAutoQuit = currentAlarmData.isAUTOQuitOn;
                 var AUTOQuitMIN = currentAlarmData.AUTOQuitMinutes;
                 var isBellOn = currentAlarmData.isBellOn;
