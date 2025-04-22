@@ -10,6 +10,8 @@ public class ARImageTrackingManager : MonoBehaviour
     private GameObject modelPrefab;
     [SerializeField] 
     private string markerName;
+    [SerializeField]
+    private AlarmManager alarmManager;
     
     [Header("Model 정렬")]
     public float modelYRotationOffset = 180f;
@@ -35,6 +37,8 @@ public class ARImageTrackingManager : MonoBehaviour
     [SerializeField]
     private Animator modelAnimator;
     [SerializeField]
+    private RuntimeAnimatorController defaultAnimatorController;
+    [SerializeField]
     private RuntimeAnimatorController earlyAnimatorController;
     [SerializeField]
     private RuntimeAnimatorController onTimeAnimatorController;
@@ -46,6 +50,8 @@ public class ARImageTrackingManager : MonoBehaviour
     
     // 초기값은 정시에 일어난 걸로 설정
     public string wakeUpStatus = "onTime";
+
+    //private bool waitingToRestoreDefault = false;
     void Update()
     {
         bool found = false;
@@ -58,10 +64,21 @@ public class ARImageTrackingManager : MonoBehaviour
             {
                 found = true;
 
+                
+                
                 if (!wasTracking)
                 {
+                    modelPrefab.SetActive(true);
+                    modelPrefab.transform.position = trackedImage.transform.position;
+                    
+                    modelPrefab.transform.rotation = trackedImage.transform.rotation 
+                                                     * Quaternion.Euler(0f, modelYRotationOffset, 0f);
+
                     // 마커를 처음 인식한 순간 -> 현재 시간과 알람 시간 비교
                     DateTime now = DateTime.Now;
+                    var currentHours = now.Hour;
+                    var currentMinutes = now.Minute;
+                    var currentTotalMin = currentHours * 60 + currentMinutes;
                     
                     // UI manager에서 현재 설정된 알람 리스트를 불러옴
                     var alarmList = UIManager.Instance.alarmDataList;
@@ -72,55 +89,66 @@ public class ARImageTrackingManager : MonoBehaviour
                     }
                     
                     // 마지막으로 설정된 알람을 기준으로 DateTime 객체 생성
-                    var latestAlarm = alarmList[alarmList.Count - 1];
-                    DateTime alarmTime = new DateTime(now.Year, now.Month, now.Day,
-                        latestAlarm.alarm24Hour, latestAlarm.alarm24Minute, 0);
+                    var settedAlarmTime = AlarmManager.currentTotalMin;
+                    var standard = settedAlarmTime + 3;
                     
                     // 현재 시간과 알람 시간 차이 비교하여 사용자의 일어남 상태 확인하여 상태에 저장
-                    TimeSpan diff = now - alarmTime;
-                    if (now < alarmTime)
+                    if (currentTotalMin > standard )
+                    {
+                        wakeUpStatus = "late";
+                    }
+                    else if(settedAlarmTime > currentTotalMin)
                     {
                         wakeUpStatus = "early";
                     }
-                    else if (diff.TotalMinutes <= 3)
+                    else if (currentTotalMin <= standard && settedAlarmTime < currentTotalMin)
                     {
                         wakeUpStatus = "onTime";
                     }
                     else
                     {
-                        wakeUpStatus = "late";
+                        Debug.Log("error");
                     }
-                    
+
                     // Animator Controller change
                     if (modelAnimator != null)
                     {
+                        //waitingToRestoreDefault = false;
                         switch (wakeUpStatus)
                         {
                             case "early":
                                 modelAnimator.runtimeAnimatorController = earlyAnimatorController;
+                                //waitingToRestoreDefault = true;
                                 break;
                             case "onTime":
                                 modelAnimator.runtimeAnimatorController = onTimeAnimatorController;
+                                //waitingToRestoreDefault = true;
                                 break;
                             case "late":
                                 modelAnimator.runtimeAnimatorController = lateAnimatorController;
+                                //waitingToRestoreDefault = true;
                                 break;
                         }
                     }
-                    
-                    modelPrefab.SetActive(true);
-                    
-                    modelPrefab.transform.position = trackedImage.transform.position;
-                    
-                    modelPrefab.transform.rotation = trackedImage.transform.rotation 
-                                                     * Quaternion.Euler(0f, modelYRotationOffset, 0f);
-                   /* 
-                    // model scale 
-                    float scale = trackedImage.size.y / baseMarkerSize;
-                    scale = Mathf.Clamp(scale, minScale, maxScale);
-                    modelPrefab.transform.localScale = Vector3.one * scale;
-                    */
                 }
+
+                /*                
+                if (waitingToRestoreDefault && modelAnimator != null)
+                {
+                    AnimatorStateInfo stateInfo = modelAnimator.GetCurrentAnimatorStateInfo(0);
+                    if (stateInfo.IsName("Shinano_AFK_Outro_VRSuya") || stateInfo.IsName("AGIA_Idle_concern_01_right_hand_front") 
+                                                                     || stateInfo.IsName("AGIA_Idle_angry_01_hands_on_waist"))
+                    {
+                        if (stateInfo.normalizedTime >= 1.0f)
+                        {
+                            modelAnimator.runtimeAnimatorController = defaultAnimatorController;
+                            modelAnimator.Play("Idle_Base", 0, 0f);
+                            waitingToRestoreDefault = false;
+                            Debug.Log("Animation finished and back to controller!");
+                        }
+                    }
+                }
+                */
                 _currImage = trackedImage;
                 break;
                 /*
@@ -141,17 +169,17 @@ public class ARImageTrackingManager : MonoBehaviour
             }
         }
         // 만약 found가 false면 마커를 못 본 상태 -> setActive(false)
-        if (!found)
+        if (!found && modelPrefab != null && modelPrefab.activeSelf)
         {
-            if (modelPrefab.activeSelf)
-            {
-                //Debug.Log("[AR] Model Off");
-                modelPrefab.SetActive(false);
-                _currImage = null;
-            }
+            //Debug.Log("[AR] Model Off");
+            modelPrefab.SetActive(false);
+            _currImage = null;
+            
         }
         wasTracking = found;
+
     }
+    
     // Reset 버튼이 현재 마커의 rotaion을 사용할 수 있게 public 메서드로 제공
     public ARTrackedImage GetCurrentlyTrackingImage()
     {

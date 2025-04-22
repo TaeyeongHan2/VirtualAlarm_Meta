@@ -90,8 +90,7 @@ public class ARModelTouchInteraction : MonoBehaviour
                 }
             }
         }
-        
-        
+
         // 2. 한 손가락 탭 입력 감지
         foreach (var t in Touchscreen.current.touches)
         {
