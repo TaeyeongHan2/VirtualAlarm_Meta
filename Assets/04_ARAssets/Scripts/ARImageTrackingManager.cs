@@ -86,13 +86,17 @@ public class ARImageTrackingManager : MonoBehaviour
                     {
                         wakeUpStatus = "late";
                     }
-                    else if (currentTotalMin <= standard)
+                    else if(settedAlarmTime > currentTotalMin)
+                    {
+                        wakeUpStatus = "early";
+                    }
+                    else if (currentTotalMin <= standard && settedAlarmTime < currentTotalMin)
                     {
                         wakeUpStatus = "onTime";
                     }
                     else
                     {
-                        wakeUpStatus = "early";
+                        Debug.Log("error");
                     }
                     
                     // DateTime alarmTime = new DateTime(now.Year, now.Month, now.Day,
