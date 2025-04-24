@@ -10,6 +10,7 @@ public class ARImageTrackingManager : MonoBehaviour
     private GameObject modelPrefab;
     [SerializeField] 
     private string markerName;
+    
     [SerializeField]
     private AlarmManager alarmManager;
     
@@ -50,11 +51,8 @@ public class ARImageTrackingManager : MonoBehaviour
     
     // 초기값은 정시에 일어난 걸로 설정
     public string wakeUpStatus = "onTime";
-
-    //private bool waitingToRestoreDefault = false;
     void Update()
     {
-        
         bool found = false;
         
         foreach (var trackedImage in trackedImageManager.trackables)
@@ -65,8 +63,6 @@ public class ARImageTrackingManager : MonoBehaviour
             {
                 found = true;
 
-                
-                
                 if (!wasTracking)
                 {
                     
@@ -110,47 +106,37 @@ public class ARImageTrackingManager : MonoBehaviour
                     {
                         Debug.Log("error");
                     }
-
                     
                     // Animator Controller change
                     if (modelAnimator != null)
                     {
-                        //waitingToRestoreDefault = false;
                         switch (wakeUpStatus)
                         {
                             case "early":
                                 modelAnimator.runtimeAnimatorController = earlyAnimatorController;
-                                //waitingToRestoreDefault = true;
                                 break;
                             case "onTime":
                                 modelAnimator.runtimeAnimatorController = onTimeAnimatorController;
-                                //waitingToRestoreDefault = true;
                                 break;
                             case "late":
                                 modelAnimator.runtimeAnimatorController = lateAnimatorController;
-                                //waitingToRestoreDefault = true;
                                 break;
                         }
                     }
+                    
+                    modelPrefab.SetActive(true);
+                    
+                    modelPrefab.transform.position = trackedImage.transform.position;
+                    
+                    modelPrefab.transform.rotation = trackedImage.transform.rotation 
+                                                     * Quaternion.Euler(0f, modelYRotationOffset, 0f);
+                   /* 
+                    // model scale 
+                    float scale = trackedImage.size.y / baseMarkerSize;
+                    scale = Mathf.Clamp(scale, minScale, maxScale);
+                    modelPrefab.transform.localScale = Vector3.one * scale;
+                    */
                 }
-
-                /*                
-                if (waitingToRestoreDefault && modelAnimator != null)
-                {
-                    AnimatorStateInfo stateInfo = modelAnimator.GetCurrentAnimatorStateInfo(0);
-                    if (stateInfo.IsName("Shinano_AFK_Outro_VRSuya") || stateInfo.IsName("AGIA_Idle_concern_01_right_hand_front") 
-                                                                     || stateInfo.IsName("AGIA_Idle_angry_01_hands_on_waist"))
-                    {
-                        if (stateInfo.normalizedTime >= 1.0f)
-                        {
-                            modelAnimator.runtimeAnimatorController = defaultAnimatorController;
-                            modelAnimator.Play("Idle_Base", 0, 0f);
-                            waitingToRestoreDefault = false;
-                            Debug.Log("Animation finished and back to controller!");
-                        }
-                    }
-                }
-                */
                 _currImage = trackedImage;
                 break;
                 /*
@@ -179,9 +165,7 @@ public class ARImageTrackingManager : MonoBehaviour
             
         }
         wasTracking = found;
-
     }
-    
     // Reset 버튼이 현재 마커의 rotaion을 사용할 수 있게 public 메서드로 제공
     public ARTrackedImage GetCurrentlyTrackingImage()
     {
