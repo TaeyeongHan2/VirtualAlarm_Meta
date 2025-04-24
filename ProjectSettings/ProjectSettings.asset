@@ -9,9 +9,9 @@ PlayerSettings:
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
   defaultScreenOrientation: 4
-  targetDevice: 2
-  useOnDemandResources: 0
-  accelerometerFrequency: 60
+  targetDevice: 0
+  useOnDemandResources: 1
+  accelerometerFrequency: 100
   companyName: LHJ
   productName: VirtualAlarm
   defaultCursor: {fileID: 0}
@@ -84,7 +84,7 @@ PlayerSettings:
   macRetinaSupport: 1
   runInBackground: 0
   muteOtherAudioSources: 0
-  Prepare IOS For Recording: 0
+  Prepare IOS For Recording: 1
   Force IOS Speakers When Recording: 0
   deferSystemGesturesMode: 0
   hideHomeButton: 0
@@ -140,7 +140,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.1.0
+  bundleVersion: 0.1.5
   preloadedAssets:
   - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   metroInputSource: 0
@@ -149,13 +149,13 @@ PlayerSettings:
   xboxOneDisableKinectGpuReservation: 1
   xboxOneEnable7thCore: 1
   vrSettings:
-    enable360StereoCapture: 0
+    enable360StereoCapture: 1
   isWsaHolographicRemotingEnabled: 0
   enableFrameTimingStats: 0
   enableOpenGLProfilerGPURecorders: 1
-  allowHDRDisplaySupport: 0
-  useHDRDisplay: 0
-  hdrBitDepth: 0
+  allowHDRDisplaySupport: 1
+  useHDRDisplay: 1
+  hdrBitDepth: 1
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
   resolutionScalingMode: 0
@@ -165,7 +165,7 @@ PlayerSettings:
   androidMinAspectRatio: 1
   applicationIdentifier:
     Android: com.LHJ.VirtualAlarm
-    Standalone: com.Unity-Technologies.com.unity.template.urp-blank
+    Standalone: com.LHJ.VirtualAlarm
     iPhone: com.LHJ.VirtualAlarm
   buildNumber:
     Standalone: 0
@@ -248,8 +248,8 @@ PlayerSettings:
   iOSManualSigningProvisioningProfileType: 0
   tvOSManualSigningProvisioningProfileType: 0
   VisionOSManualSigningProvisioningProfileType: 0
-  appleEnableAutomaticSigning: 0
-  iOSRequireARKit: 0
+  appleEnableAutomaticSigning: 1
+  iOSRequireARKit: 1
   iOSAutomaticallyDetectAndAddCapabilities: 1
   appleEnableProMotion: 0
   shaderPrecisionModel: 0
@@ -543,6 +543,9 @@ PlayerSettings:
   - serializedVersion: 2
     m_BuildTarget: Android
     m_EncodingQuality: 1
+  - serializedVersion: 2
+    m_BuildTarget: iOS
+    m_EncodingQuality: 2
   m_BuildTargetGroupLightmapSettings: []
   m_BuildTargetGroupLoadStoreDebugModeSettings: []
   m_BuildTargetNormalMapEncoding:
