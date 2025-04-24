@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.InputSystem;
@@ -25,6 +26,23 @@ public class ARModelTouchInteraction : MonoBehaviour
     private const float doubleTapMaxDelay = 0.3f;
     private int tapCount = 0;
 
+    private InputAction tapAction;
+    private InputAction positionAction;
+    
+    private void Awake()
+    {
+        //var inputActionAsset = GetComponent<TouchControl>().actionAsset;
+        
+    }
+    private void OnEnable()
+    {
+        
+    }
+
+    private void OnDisable()
+    {
+        
+    }
     void Update()
     {
         // 1. 마커가 tracking 중일 때만 동작
