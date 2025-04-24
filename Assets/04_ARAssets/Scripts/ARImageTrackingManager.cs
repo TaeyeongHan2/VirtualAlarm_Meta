@@ -54,6 +54,7 @@ public class ARImageTrackingManager : MonoBehaviour
     //private bool waitingToRestoreDefault = false;
     void Update()
     {
+        
         bool found = false;
         
         foreach (var trackedImage in trackedImageManager.trackables)
@@ -68,9 +69,9 @@ public class ARImageTrackingManager : MonoBehaviour
                 
                 if (!wasTracking)
                 {
+                    
                     modelPrefab.SetActive(true);
                     modelPrefab.transform.position = trackedImage.transform.position;
-                    
                     modelPrefab.transform.rotation = trackedImage.transform.rotation 
                                                      * Quaternion.Euler(0f, modelYRotationOffset, 0f);
 
@@ -110,6 +111,7 @@ public class ARImageTrackingManager : MonoBehaviour
                         Debug.Log("error");
                     }
 
+                    
                     // Animator Controller change
                     if (modelAnimator != null)
                     {
