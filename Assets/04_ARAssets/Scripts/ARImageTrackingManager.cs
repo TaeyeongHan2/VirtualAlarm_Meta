@@ -38,6 +38,8 @@ public class ARImageTrackingManager : MonoBehaviour
     [SerializeField]
     private Animator modelAnimator;
     [SerializeField]
+    private RuntimeAnimatorController defaultAnimatorController;
+    [SerializeField]
     private RuntimeAnimatorController earlyAnimatorController;
     [SerializeField]
     private RuntimeAnimatorController onTimeAnimatorController;
@@ -63,6 +65,12 @@ public class ARImageTrackingManager : MonoBehaviour
 
                 if (!wasTracking)
                 {
+                    
+                    modelPrefab.SetActive(true);
+                    modelPrefab.transform.position = trackedImage.transform.position;
+                    modelPrefab.transform.rotation = trackedImage.transform.rotation 
+                                                     * Quaternion.Euler(0f, modelYRotationOffset, 0f);
+
                     // 마커를 처음 인식한 순간 -> 현재 시간과 알람 시간 비교
                     DateTime now = DateTime.Now;
                     var currentHours = now.Hour;
@@ -98,24 +106,6 @@ public class ARImageTrackingManager : MonoBehaviour
                     {
                         Debug.Log("error");
                     }
-                    
-                    // DateTime alarmTime = new DateTime(now.Year, now.Month, now.Day,
-                    //     latestAlarm.alarm24Hour, latestAlarm.alarm24Minute, 0);
-                    
-                    // 현재 시간과 알람 시간 차이 비교하여 사용자의 일어남 상태 확인하여 상태에 저장
-                    // TimeSpan diff = now - alarmTime;
-                    // if (now < alarmTime)
-                    // {
-                    //     wakeUpStatus = "early";
-                    // }
-                    // else if (diff.TotalMinutes <= 3)
-                    // {
-                    //     wakeUpStatus = "onTime";
-                    // }
-                    // else
-                    // {
-                    //     wakeUpStatus = "late";
-                    // }
                     
                     // Animator Controller change
                     if (modelAnimator != null)
@@ -167,14 +157,12 @@ public class ARImageTrackingManager : MonoBehaviour
             }
         }
         // 만약 found가 false면 마커를 못 본 상태 -> setActive(false)
-        if (!found)
+        if (!found && modelPrefab != null && modelPrefab.activeSelf)
         {
-            if (modelPrefab.activeSelf)
-            {
-                //Debug.Log("[AR] Model Off");
-                //modelPrefab.SetActive(false);
-                _currImage = null;
-            }
+            //Debug.Log("[AR] Model Off");
+            modelPrefab.SetActive(false);
+            _currImage = null;
+            
         }
         wasTracking = found;
     }

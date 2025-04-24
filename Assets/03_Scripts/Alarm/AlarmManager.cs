@@ -6,6 +6,7 @@ using UnityEngine;
 public class AlarmManager : MonoBehaviour
 {
     private Coroutine alarmCheckCoroutine; // 추후 코루틴을 종료해야할 때를 대비해서 IEnumerator 캐싱
+
     public static AlarmBase currentAlarmData;
     public static int currentTotalMin;
     void Awake()
