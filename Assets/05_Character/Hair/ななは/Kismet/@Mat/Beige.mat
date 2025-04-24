@@ -827,7 +827,7 @@ Material:
     - _UseParallax: 0
     - _UseReflection: 1
     - _UseRim: 1
-    - _UseRimShade: 1
+    - _UseRimShade: 0
     - _UseShadow: 1
     - _Use_1stAs2nd: 1
     - _Use_BaseAs1st: 1

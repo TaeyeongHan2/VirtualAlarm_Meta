@@ -6282,6 +6282,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EarlyWakeShinano
       objectReference: {fileID: 0}
+    - target: {fileID: 4727298759780481091, guid: 1444bdb71375a1d4a83744ff369e85b6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6499984363407781333, guid: 1444bdb71375a1d4a83744ff369e85b6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8293858784473749700, guid: 1444bdb71375a1d4a83744ff369e85b6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9056166046305329486, guid: 1444bdb71375a1d4a83744ff369e85b6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6378,6 +6390,10 @@ PrefabInstance:
     - target: {fileID: 7281998952165490333, guid: 5f0978c32a5dea14c8ce1283dd375a12, type: 3}
       propertyPath: m_Name
       value: WakeUpLateShinano
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281998952165490333, guid: 5f0978c32a5dea14c8ce1283dd375a12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
