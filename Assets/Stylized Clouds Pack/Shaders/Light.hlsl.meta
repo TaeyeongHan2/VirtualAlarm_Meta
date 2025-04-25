@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e7c4267644a920f4aafb1e6ccf6cc479
+ShaderIncludeImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 263029
+  packageName: Stylized Clouds - Pack
+  packageVersion: 2.0.0
+  assetPath: Assets/Stylized Clouds Pack/Shaders/Light.hlsl
+  uploadId: 732692
