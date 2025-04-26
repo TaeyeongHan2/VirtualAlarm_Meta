@@ -680,7 +680,7 @@ Material:
     - _RimBlur: 0.1
     - _RimBorder: 0.5
     - _RimDirRange: 0
-    - _RimDirStrength: 0
+    - _RimDirStrength: 1
     - _RimEnableLighting: 1
     - _RimFresnelPower: 3
     - _RimIndirBlur: 0.1

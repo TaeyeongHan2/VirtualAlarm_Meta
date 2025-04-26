@@ -699,22 +699,22 @@ Material:
     - _ReflectionNormalStrength: 1
     - _RimApplyTransparency: 1
     - _RimBackfaceMask: 1
-    - _RimBlendMode: 0
-    - _RimBlur: 0.357
-    - _RimBorder: 0.847
-    - _RimDirRange: 0
-    - _RimDirStrength: 0.98
+    - _RimBlendMode: 1
+    - _RimBlur: 1
+    - _RimBorder: 0
+    - _RimDirRange: 1
+    - _RimDirStrength: 1
     - _RimEnableLighting: 1
-    - _RimFresnelPower: 0.3
+    - _RimFresnelPower: 0.9
     - _RimIndirBlur: 0.1
     - _RimIndirBorder: 0.5
-    - _RimIndirRange: 0
+    - _RimIndirRange: 1
     - _RimLight: 1
     - _RimLight_FeatherOff: 0
     - _RimLight_InsideMask: 0.373
     - _RimLight_Power: 0.498
-    - _RimMainStrength: 1
-    - _RimNormalStrength: 0
+    - _RimMainStrength: 0
+    - _RimNormalStrength: 1
     - _RimShadeBlur: 1
     - _RimShadeBorder: 0.5
     - _RimShadeFresnelPower: 1
@@ -917,7 +917,7 @@ Material:
     - _PreColor: {r: 1, g: 1, b: 1, a: 1}
     - _ReflectionColor: {r: 0.58431375, g: 0.49834555, b: 0.32941177, a: 0.4}
     - _ReflectionCubeColor: {r: 0, g: 0, b: 0, a: 1}
-    - _RimColor: {r: 0.8862745, g: 0.81828356, b: 0.8, a: 1}
+    - _RimColor: {r: 0.66, g: 0.5, b: 0.48, a: 1}
     - _RimIndirColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimLightColor: {r: 0.8773585, g: 0.7626129, b: 0.69112676, a: 1}
     - _RimShadeColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
