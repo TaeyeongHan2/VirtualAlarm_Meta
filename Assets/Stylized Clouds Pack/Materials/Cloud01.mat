@@ -608,7 +608,7 @@ Material:
     - _RimVRParallaxStrength: 1
     - _Shading_Factor: 1
     - _Shading_Offset: 1
-    - _Shading_Power: 1
+    - _Shading_Power: 0.614
     - _Shadow2ndBlur: 0.1
     - _Shadow2ndBorder: 0.15
     - _Shadow2ndNormalStrength: 1
