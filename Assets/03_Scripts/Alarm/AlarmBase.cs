@@ -4,6 +4,7 @@ namespace _03_Scripts.Alarm
 {
     public class AlarmBase
     {
+        
         public string alarm24Time;
         public int alarm24Hour;
         public int alarm24Minute;
