@@ -200,7 +200,7 @@ MonoBehaviour:
   active: 1
   disabled:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   compareMode:
     m_OverrideState: 1
     m_Value: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
     dimension: 1
   bloomIntensity:
     m_OverrideState: 1
-    m_Value: 1.01
+    m_Value: 0.89
   bloomThreshold:
     m_OverrideState: 1
     m_Value: 0.67
@@ -362,12 +362,12 @@ MonoBehaviour:
     m_Value: 1
   bloomLayersFilterMethod:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   bloomExclusionLayerMask:
     m_OverrideState: 1
     m_Value:
       serializedVersion: 2
-      m_Bits: 4096
+      m_Bits: 17408
   bloomAntiflicker:
     m_OverrideState: 1
     m_Value: 1
