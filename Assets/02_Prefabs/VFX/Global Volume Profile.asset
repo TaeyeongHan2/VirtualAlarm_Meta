@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
   m_Name: Tonemapping
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 1
   neutralHDRRangeReductionMode:
     m_OverrideState: 0
     m_Value: 2
   acesPreset:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 3
   hueShiftAmount:
     m_OverrideState: 0
@@ -86,13 +86,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   postExposure:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   contrast:
     m_OverrideState: 1
-    m_Value: -14.38
+    m_Value: -10
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -101,7 +101,7 @@ MonoBehaviour:
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: 14
+    m_Value: 5.9
 --- !u!114 &-2711140528074286424
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -301,7 +301,7 @@ MonoBehaviour:
     m_Value: 1
   saturate:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.49
   brightness:
     m_OverrideState: 0
     m_Value: 1
@@ -335,10 +335,10 @@ MonoBehaviour:
     dimension: 1
   bloomIntensity:
     m_OverrideState: 1
-    m_Value: 0.25
+    m_Value: 0.06
   bloomThreshold:
     m_OverrideState: 1
-    m_Value: 0.66
+    m_Value: 0.76
   bloomConservativeThreshold:
     m_OverrideState: 1
     m_Value: 1

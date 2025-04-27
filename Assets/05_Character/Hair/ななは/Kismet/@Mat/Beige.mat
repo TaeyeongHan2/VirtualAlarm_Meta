@@ -140,6 +140,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _FurLengthMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FurMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FurNoiseMask:
+        m_Texture: {fileID: 2800000, guid: 8a7dbcb2f4a32ec4297486403aee5f74, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FurVectorTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _GlitterColorTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -464,6 +480,44 @@ Material:
     - _EmissionUseGrad: 0
     - _Farthest_Distance: 100
     - _FlipNormal: 0
+    - _FurAO: 0
+    - _FurAlphaToMask: 0
+    - _FurBlendOp: 0
+    - _FurBlendOpAlpha: 0
+    - _FurBlendOpAlphaFA: 4
+    - _FurBlendOpFA: 4
+    - _FurColorMask: 15
+    - _FurCull: 0
+    - _FurCutoutLength: 0.8
+    - _FurDstBlend: 10
+    - _FurDstBlendAlpha: 10
+    - _FurDstBlendAlphaFA: 1
+    - _FurDstBlendFA: 1
+    - _FurGravity: 0.25
+    - _FurLayerNum: 2
+    - _FurMeshType: 1
+    - _FurOffsetFactor: 0
+    - _FurOffsetUnits: 0
+    - _FurRandomize: 0
+    - _FurRimAntiLight: 0.5
+    - _FurRimFresnelPower: 3
+    - _FurRootOffset: 0
+    - _FurSrcBlend: 5
+    - _FurSrcBlendAlpha: 1
+    - _FurSrcBlendAlphaFA: 0
+    - _FurSrcBlendFA: 1
+    - _FurStencilComp: 8
+    - _FurStencilFail: 0
+    - _FurStencilPass: 0
+    - _FurStencilReadMask: 255
+    - _FurStencilRef: 0
+    - _FurStencilWriteMask: 255
+    - _FurStencilZFail: 0
+    - _FurTouchStrength: 0
+    - _FurVectorScale: 1
+    - _FurZClip: 1
+    - _FurZTest: 4
+    - _FurZWrite: 0
     - _GI_Intensity: 0
     - _GSAAStrength: 0
     - _GlitterAngleRandomize: 0
@@ -547,7 +601,7 @@ Material:
     - _Is_ViewCoord_Scroll: 0
     - _Is_ViewShift: 0
     - _LightDirection_MaskOn: 0
-    - _LightMaxLimit: 0.65
+    - _LightMaxLimit: 0.63
     - _LightMinLimit: 0.05
     - _Main2ndDissolveNoiseStrength: 0.1
     - _Main2ndEnableLighting: 1
@@ -831,6 +885,7 @@ Material:
     - _UseShadow: 1
     - _Use_1stAs2nd: 1
     - _Use_BaseAs1st: 1
+    - _VertexColor2FurVector: 0
     - _VertexLightStrength: 0
     - _ZClip: 1
     - _ZTest: 4
@@ -880,6 +935,8 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionMap_ScrollRotate: {r: 0, g: 0, b: 0, a: 0}
     - _Emissive_Color: {r: 0, g: 0, b: 0, a: 1}
+    - _FurRimColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FurVector: {r: 0, g: 0, b: 1, a: 0.02}
     - _GlitterAtras: {r: 1, g: 1, b: 0, a: 0}
     - _GlitterColor: {r: 1, g: 1, b: 1, a: 1}
     - _GlitterParams1: {r: 256, g: 256, b: 0.16, a: 50}
@@ -903,7 +960,7 @@ Material:
     - _Main3rdTexDecalAnimation: {r: 1, g: 1, b: 1, a: 30}
     - _Main3rdTexDecalSubParam: {r: 1, g: 1, b: 0, a: 1}
     - _Main3rdTex_ScrollRotate: {r: 0, g: 0, b: 0, a: 0}
-    - _MainTexHSVG: {r: 0, g: 0.72, b: 0.85, a: 0.9}
+    - _MainTexHSVG: {r: 0, g: 0.78, b: 0.85, a: 1}
     - _MainTex_ScrollRotate: {r: 0, g: 0, b: 0, a: 0}
     - _MatCap2ndBlendUV1: {r: 0, g: 0, b: 0, a: 0}
     - _MatCap2ndColor: {r: 1, g: 1, b: 1, a: 1}
