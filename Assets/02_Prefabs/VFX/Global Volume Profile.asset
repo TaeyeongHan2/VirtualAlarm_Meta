@@ -367,7 +367,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value:
       serializedVersion: 2
-      m_Bits: 17408
+      m_Bits: 16384
   bloomAntiflicker:
     m_OverrideState: 1
     m_Value: 1
@@ -623,7 +623,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   depthOfFieldFocusMode:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   depthOfFieldAutofocusMinDistance:
     m_OverrideState: 0
@@ -655,10 +655,10 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   depthOfFieldFocalLength:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.011
   depthOfFieldAperture:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 2.8
   depthOfFieldFocalLengthReal:
     m_OverrideState: 0
