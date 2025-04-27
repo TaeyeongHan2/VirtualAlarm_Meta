@@ -307,7 +307,7 @@ MonoBehaviour:
     m_Value: 1
   contrast:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 1.131
   daltonize:
     m_OverrideState: 0
     m_Value: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
     dimension: 1
   bloomIntensity:
     m_OverrideState: 1
-    m_Value: 0.06
+    m_Value: 0.76
   bloomThreshold:
     m_OverrideState: 1
     m_Value: 0.76
@@ -740,8 +740,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   eyeAdaptation:
-    m_OverrideState: 1
-    m_Value: 1
+    m_OverrideState: 0
+    m_Value: 0
   eyeAdaptationMinExposure:
     m_OverrideState: 1
     m_Value: 0.2
@@ -765,7 +765,7 @@ MonoBehaviour:
     m_Value: {fileID: 0}
     dimension: 1
   purkinje:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   purkinjeAmount:
     m_OverrideState: 1

@@ -524,7 +524,7 @@ Material:
     - _IndirectLightIntensity: 0.1
     - _Invisible: 0
     - _LightColorAttenuation: 0
-    - _LightMaxLimit: 0.65
+    - _LightMaxLimit: 0.48
     - _LightMinLimit: 0.13
     - _MToonVersion: 39
     - _Main2ndDissolveNoiseStrength: 0.1
@@ -724,7 +724,7 @@ Material:
     - _ShadowStrength: 1
     - _ShadowStrengthMaskLOD: 0
     - _ShiftBackfaceUV: 0
-    - _Smoothness: 1
+    - _Smoothness: 0.8
     - _SmoothnessTextureChannel: 0
     - _SpecularBlur: 0
     - _SpecularBorder: 0.5
@@ -770,7 +770,7 @@ Material:
     - _UVSec: 0
     - _UseAnisotropy: 0
     - _UseAudioLink: 0
-    - _UseBacklight: 0
+    - _UseBacklight: 1
     - _UseBump2ndMap: 0
     - _UseBumpMap: 1
     - _UseClippingCanceller: 0
