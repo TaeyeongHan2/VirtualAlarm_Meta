@@ -9,6 +9,7 @@ public class ARModelTouchInteraction : MonoBehaviour
     private static readonly int Nod = Animator.StringToHash("Nod");
     private static readonly int Jump = Animator.StringToHash("Jump");
     private static readonly int Dance = Animator.StringToHash("Dance");
+    private static readonly int CanInteract = Animator.StringToHash("CanInteract");
 
     [SerializeField] 
     private Camera arCamera;
@@ -21,29 +22,32 @@ public class ARModelTouchInteraction : MonoBehaviour
     
     private ARTrackedImage _arTrackedImage;
     
+    // InputActions 에셋에서 생성된 클래스
+    private TouchControl touchActions;
+    
     // 더블 탭 감지 변수
     private float lastTapTime = -1f;
     private const float doubleTapMaxDelay = 0.3f;
     private int tapCount = 0;
-
-    private InputAction tapAction;
-    private InputAction positionAction;
     
     private void Awake()
     {
-        //var inputActionAsset = GetComponent<TouchControl>().actionAsset;
+        touchActions = new TouchControl();
         
     }
     private void OnEnable()
     {
-        
+        touchActions.Enable();
+        touchActions.Touch.Tap.performed += OnTap;
     }
 
     private void OnDisable()
     {
-        
+        touchActions.Touch.Tap.performed -= OnTap;
+        touchActions.Disable();
     }
-    void Update()
+
+    private void OnTap(InputAction.CallbackContext context)
     {
         // 1. 마커가 tracking 중일 때만 동작
         _arTrackedImage = null;
@@ -56,131 +60,103 @@ public class ARModelTouchInteraction : MonoBehaviour
                 break;
             }
         }
-
         if (_arTrackedImage == null)
         {
             return;
         }
         
+        // 터치 위치 얻기
+        Vector2 touchPosition = touchActions.Touch.TouchPosition.ReadValue<Vector2>();
         
-        // 멀티 터치 땐 return -> 애니메이션 처리 x
-        int activeTouchCount = 0;
-        foreach (var t in Touchscreen.current.touches)
+        // 더블탭 감지
+        float now = Time.time;
+        if (tapCount == 1 && now - lastTapTime < doubleTapMaxDelay)
         {
-            if (t.press.isPressed)
+            if (modelAnimator != null && modelAnimator.GetBool(CanInteract))
             {
-                activeTouchCount++;
+                Debug.Log("Double Tap : Dance Animation Start");
+                modelAnimator.SetTrigger(Dance);
             }
-        }
-
-        if (activeTouchCount >= 2)
-        {
+            else
+            {
+                Debug.Log("Animator is NULL");
+            }
+            tapCount = 0;
             return;
         }
-        
-        // 더블 탭 감지
-        if (activeTouchCount == 1)
+        else
         {
-            foreach (var t in Touchscreen.current.touches)
+            tapCount = 1;
+            lastTapTime = now;
+        }
+        
+        // 단일 탭일 때만 파츠 판정
+        Ray ray = arCamera.ScreenPointToRay(touchPosition);
+        RaycastHit[] hits = Physics.RaycastAll(ray);
+
+        RaycastHit? foundHit = null;
+        string hitTag = "";
+
+        // 1. Hand, 2. Head, 3. Model
+        foreach (var hit in hits)
+        {
+            if (hit.collider.CompareTag("Hand"))
             {
-                if (t.press.wasReleasedThisFrame)
+                foundHit = hit;
+                hitTag = "Hand";
+                break;
+            }
+        }
+
+        if (!foundHit.HasValue)
+        {
+            foreach (var hit in hits)
+            {
+                if (hit.collider.CompareTag("Head"))
                 {
-                    float now = Time.time;
-                    if (tapCount == 1 && now - lastTapTime < doubleTapMaxDelay)
-                    {
-                        // 더블 탭! 인사
-                        if (modelAnimator != null)
-                        {
-                            Debug.Log("Double Tap : Animation Start");
-                            modelAnimator.SetTrigger(Dance);
-                        }
-                        else
-                        {
-                            Debug.Log("Animator is NULL");
-                        }
-                        tapCount = 0;
-                    }
-                    else
-                    {
-                        tapCount = 1;
-                        lastTapTime = now;
-                    }
+                    foundHit = hit;
+                    hitTag = "Head";
+                    break;
                 }
             }
         }
 
-        // 2. 한 손가락 탭 입력 감지
-        foreach (var t in Touchscreen.current.touches)
+        if (!foundHit.HasValue)
         {
-            if (t.press.wasPressedThisFrame)
+            foreach (var hit in hits)
             {
-                Vector2 touchPosition = t.position.ReadValue();
-                Ray ray = arCamera.ScreenPointToRay(touchPosition);
-                RaycastHit[] hits = Physics.RaycastAll(ray);
-                
-                RaycastHit? foundHit = null;
-                string hitTag = "";
-                // 1. Hand, 2. Head, 3. Model
-                foreach (var hit in hits)
+                if (hit.collider.CompareTag("Foot"))
                 {
-                    if (hit.collider.CompareTag("Hand"))
-                    {
-                        foundHit = hit;
-                        hitTag = "Hand";
-                        break;
-                    }
-                }
-
-                if (!foundHit.HasValue)
-                {
-                    foreach (var hit in hits)
-                    {
-                        if (hit.collider.CompareTag("Head"))
-                        {
-                            foundHit = hit;
-                            hitTag = "Head";
-                            break;
-                        }
-                    }
-                }
-
-                if (!foundHit.HasValue)
-                {
-                    foreach (var hit in hits)
-                    {
-                        if (hit.collider.CompareTag("Foot"))
-                        {
-                            foundHit = hit;
-                            hitTag = "Foot";
-                            break;
-                        }
-                    }
-                }
-                // 분기 처리
-                if (foundHit.HasValue)
-                {
-                    Debug.Log($"[Tap] 우선 수위 hit part: {hitTag}, Object : {foundHit.Value.collider.gameObject.name}");
-                    if (hitTag == "Head")
-                    {
-                        modelAnimator.SetTrigger(Nod);
-                        Debug.Log("Head touch animation start");
-                    }
-                    else if (hitTag == "Hand")
-                    {
-                        modelAnimator.SetTrigger(Wave);
-                        Debug.Log("Hand touch animation start");
-                    }
-                    else if (hitTag == "Foot")
-                    {
-                        modelAnimator.SetTrigger(Jump);
-                        Debug.Log("Model touch animation start");
-                    }
-                }
-                else
-                {
-                    Debug.Log("No Animation");
+                    foundHit = hit;
+                    hitTag = "Foot";
+                    break;
                 }
             }
+        }
+        
+        // 분기 처리
+        if (foundHit.HasValue)
+        {
+            Debug.Log($"[Tap] 우선 수위 hit part: {hitTag}, Object : {foundHit.Value.collider.gameObject.name}");
+            if (hitTag == "Head")
+            {
+                modelAnimator.SetTrigger(Nod);
+                Debug.Log("Head touch animation start");
+            }
+            else if (hitTag == "Hand")
+            {
+                modelAnimator.SetTrigger(Wave);
+                Debug.Log("Hand touch animation start");
+            }
+            else if (hitTag == "Foot")
+            {
+                modelAnimator.SetTrigger(Jump);
+                Debug.Log("Model touch animation start");
+            }
+        }
+        else
+        {
+            Debug.Log("No Animation");
         }
     }
 }
