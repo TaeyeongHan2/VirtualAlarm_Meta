@@ -445,7 +445,7 @@ Material:
     - _Invisible: 0
     - _LightMaxLimit: 1
     - _LightMinLimit: 0.05
-    - _Light_Factor: 0.33
+    - _Light_Factor: 0.293
     - _Main2ndDissolveNoiseStrength: 0.1
     - _Main2ndEnableLighting: 1
     - _Main2ndTexAlphaMode: 0

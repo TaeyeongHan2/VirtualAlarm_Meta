@@ -296,7 +296,7 @@ Material:
     - _BacklightBorder: 0.6
     - _BacklightDirectivity: 10
     - _BacklightMainStrength: 0.5
-    - _BacklightNormalStrength: 0.496
+    - _BacklightNormalStrength: 0.366
     - _BacklightReceiveShadow: 1
     - _BacklightViewStrength: 1
     - _BeforeExposureLimit: 10000
@@ -338,7 +338,7 @@ Material:
     - _BlendOpFA: 4
     - _Bump2ndMap_UVMode: 0
     - _Bump2ndScale: 1
-    - _BumpScale: 0.5
+    - _BumpScale: 0.1
     - _ColorMask: 15
     - _Cull: 2
     - _Cutoff: 0.001
@@ -413,7 +413,7 @@ Material:
     - _IDMaskPrior8: 0
     - _IgnoreEncryption: 0
     - _Invisible: 0
-    - _LightMaxLimit: 0.5
+    - _LightMaxLimit: 0.85
     - _LightMinLimit: 0.13
     - _Main2ndDissolveNoiseStrength: 0.1
     - _Main2ndEnableLighting: 1
@@ -562,9 +562,9 @@ Material:
     - _RimDirRange: 1
     - _RimDirStrength: 1
     - _RimEnableLighting: 1
-    - _RimFresnelPower: 1
-    - _RimIndirBlur: 0.451
-    - _RimIndirBorder: 0.5
+    - _RimFresnelPower: 2
+    - _RimIndirBlur: 0.522
+    - _RimIndirBorder: 0.518
     - _RimIndirRange: 0
     - _RimMainStrength: 1
     - _RimNormalStrength: 1
@@ -652,7 +652,7 @@ Material:
     - _UseGlitter: 0
     - _UseMain2ndTex: 0
     - _UseMain3rdTex: 0
-    - _UseMatCap: 1
+    - _UseMatCap: 0
     - _UseMatCap2nd: 0
     - _UseOutline: 0
     - _UsePOM: 0
@@ -738,7 +738,7 @@ Material:
     - _ReflectionColor: {r: 2.7954402, g: 2.7954402, b: 2.7954402, a: 1}
     - _ReflectionCubeColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0.7490194, g: 0.7490194, b: 0.7490194, a: 1}
-    - _RimIndirColor: {r: 0.9607843, g: 0.85882354, b: 0.79607844, a: 1}
+    - _RimIndirColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimShadeColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Shadow2ndColor: {r: 0.7885814, g: 0.8721754, b: 0.9339623, a: 1}
     - _Shadow3rdColor: {r: 0, g: 0, b: 0, a: 0}
