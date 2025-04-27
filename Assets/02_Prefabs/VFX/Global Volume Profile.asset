@@ -142,7 +142,7 @@ MonoBehaviour:
   active: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.19
+    m_Value: 0.249
 --- !u!114 &-1567692052899541760
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -158,7 +158,7 @@ MonoBehaviour:
   active: 0
   temperature:
     m_OverrideState: 1
-    m_Value: 1.4
+    m_Value: -5
   tint:
     m_OverrideState: 1
     m_Value: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   sharpenIntensity:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 4
   sharpenDepthThreshold:
     m_OverrideState: 0
@@ -261,28 +261,28 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   sharpenRelaxation:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.08
   sharpenClamp:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.45
   sharpenMotionSensibility:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.5
   sharpenMotionRestoreSpeed:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.5
   antialiasStrength:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 3.2
   antialiasDepthThreshold:
-    m_OverrideState: 1
-    m_Value: 0.000001
+    m_OverrideState: 0
+    m_Value: 0.000249
   antialiasSpread:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 3
   antialiasDepthAttenuation:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   tonemap:
     m_OverrideState: 1
@@ -303,11 +303,11 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0
   brightness:
-    m_OverrideState: 1
-    m_Value: 1.05
+    m_OverrideState: 0
+    m_Value: 1
   contrast:
     m_OverrideState: 1
-    m_Value: 1.165
+    m_Value: 1
   daltonize:
     m_OverrideState: 0
     m_Value: 0
@@ -318,10 +318,10 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 0}
   colorTempBlend:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   colorTemp:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 5922
   lut:
     m_OverrideState: 1
@@ -331,14 +331,14 @@ MonoBehaviour:
     m_Value: 0.184
   lutTexture:
     m_OverrideState: 1
-    m_Value: {fileID: 2800000, guid: cb660b42a27954f348c1567c26aaf7c9, type: 3}
+    m_Value: {fileID: 2800000, guid: c75e186435cf24b06ba55bc1c1999a6f, type: 3}
     dimension: 1
   bloomIntensity:
     m_OverrideState: 1
-    m_Value: 0.89
+    m_Value: 0.25
   bloomThreshold:
     m_OverrideState: 1
-    m_Value: 0.67
+    m_Value: 0.66
   bloomConservativeThreshold:
     m_OverrideState: 1
     m_Value: 1
@@ -595,7 +595,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0.01
   lensDirtIntensity:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   lensDirtThreshold:
     m_OverrideState: 0
@@ -652,14 +652,14 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 10
   depthOfFieldCameraSettings:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   depthOfFieldFocalLength:
-    m_OverrideState: 0
-    m_Value: 0.05
+    m_OverrideState: 1
+    m_Value: 0.011
   depthOfFieldAperture:
     m_OverrideState: 1
-    m_Value: 0.5
+    m_Value: 2.8
   depthOfFieldFocalLengthReal:
     m_OverrideState: 0
     m_Value: 50
@@ -670,7 +670,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 24
   depthOfFieldFocusSpeed:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   depthOfFieldTransparentSupport:
     m_OverrideState: 0
@@ -740,22 +740,22 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   eyeAdaptation:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   eyeAdaptationMinExposure:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.2
   eyeAdaptationMaxExposure:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 5
   eyeAdaptationSpeedToLight:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.4
   eyeAdaptationSpeedToDark:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.2
   eyeAdaptationMeteringMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   eyeAdaptationMinCameraDistance:
     m_OverrideState: 0
@@ -765,13 +765,13 @@ MonoBehaviour:
     m_Value: {fileID: 0}
     dimension: 1
   purkinje:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   purkinjeAmount:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   purkinjeLuminanceThreshold:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.15
   vignettingOuterRing:
     m_OverrideState: 0

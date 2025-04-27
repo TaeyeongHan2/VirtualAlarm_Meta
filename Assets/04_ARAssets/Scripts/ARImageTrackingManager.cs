@@ -160,7 +160,7 @@ public class ARImageTrackingManager : MonoBehaviour
         if (!found && modelPrefab != null && modelPrefab.activeSelf)
         {
             //Debug.Log("[AR] Model Off");
-            modelPrefab.SetActive(false);
+            //modelPrefab.SetActive(false);
             _currImage = null;
             
         }
