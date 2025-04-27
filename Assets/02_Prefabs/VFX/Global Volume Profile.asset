@@ -273,7 +273,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0.5
   antialiasStrength:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 3.2
   antialiasDepthThreshold:
     m_OverrideState: 0
@@ -620,8 +620,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   depthOfField:
-    m_OverrideState: 1
-    m_Value: 1
+    m_OverrideState: 0
+    m_Value: 0
   depthOfFieldFocusMode:
     m_OverrideState: 0
     m_Value: 1
@@ -882,7 +882,7 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 9
   ditherIntensity:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.005
   frame:
     m_OverrideState: 0
