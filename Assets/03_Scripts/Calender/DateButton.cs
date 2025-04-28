@@ -24,11 +24,18 @@ public class DateButton : MonoBehaviour
 
     public void OnClick()
     {
-        calenderManager.OnDateSelected(dayNumber);
+        Debug.Log($"날짜 버튼 클릭됨: {dayNumber}일");
+        calenderManager.OnDayButtonClicked(this);
+        //calenderManager.OnDateSelected(dayNumber);
     }
 
     public void SetCircleColor(Color color)
     {
         circleIcon.color = color;
+    }
+
+    public int GetDay()
+    {
+        return dayNumber;
     }
 }
