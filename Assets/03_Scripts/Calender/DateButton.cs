@@ -11,7 +11,8 @@ public class DateButton : MonoBehaviour
     public CalenderManager calenderManager;
     
     //해당하는 날짜
-    private int dayNumber;
+    [HideInInspector]
+    public int dayNumber;
 
     public void Init(int day, CalenderManager manager)
     {
@@ -26,7 +27,6 @@ public class DateButton : MonoBehaviour
     {
         Debug.Log($"날짜 버튼 클릭됨: {dayNumber}일");
         calenderManager.OnDayButtonClicked(this);
-        //calenderManager.OnDateSelected(dayNumber);
     }
 
     public void SetCircleColor(Color color)
