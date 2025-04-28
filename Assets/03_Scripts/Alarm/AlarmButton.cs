@@ -6,6 +6,7 @@ using _03_Scripts.Alarm;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
