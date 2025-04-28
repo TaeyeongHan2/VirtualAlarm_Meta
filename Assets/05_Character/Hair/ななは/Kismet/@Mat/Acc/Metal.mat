@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Metal
-  m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 94274b8ef5d3af842b9427384cba3a8f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -428,7 +428,7 @@ Material:
     - _IDMaskPrior8: 0
     - _IgnoreEncryption: 0
     - _Invisible: 0
-    - _LightMaxLimit: 1
+    - _LightMaxLimit: 0.67
     - _LightMinLimit: 0.05
     - _Main2ndDissolveNoiseStrength: 0.1
     - _Main2ndEnableLighting: 1
@@ -535,6 +535,35 @@ Material:
     - _OutlineZWrite: 1
     - _Parallax: 0.02
     - _ParallaxOffset: 0.5
+    - _PreAlphaToMask: 0
+    - _PreBlendOp: 0
+    - _PreBlendOpAlpha: 0
+    - _PreBlendOpAlphaFA: 4
+    - _PreBlendOpFA: 4
+    - _PreColorMask: 15
+    - _PreCull: 2
+    - _PreCutoff: 0.5
+    - _PreDstBlend: 10
+    - _PreDstBlendAlpha: 10
+    - _PreDstBlendAlphaFA: 1
+    - _PreDstBlendFA: 1
+    - _PreOffsetFactor: 0
+    - _PreOffsetUnits: 0
+    - _PreOutType: 0
+    - _PreSrcBlend: 1
+    - _PreSrcBlendAlpha: 1
+    - _PreSrcBlendAlphaFA: 0
+    - _PreSrcBlendFA: 1
+    - _PreStencilComp: 8
+    - _PreStencilFail: 0
+    - _PreStencilPass: 0
+    - _PreStencilReadMask: 255
+    - _PreStencilRef: 0
+    - _PreStencilWriteMask: 255
+    - _PreStencilZFail: 0
+    - _PreZClip: 1
+    - _PreZTest: 4
+    - _PreZWrite: 1
     - _Reflectance: 0.04
     - _ReflectionApplyTransparency: 1
     - _ReflectionBlendMode: 1
@@ -632,18 +661,18 @@ Material:
     - _UVSec: 0
     - _UseAnisotropy: 0
     - _UseAudioLink: 0
-    - _UseBacklight: 1
+    - _UseBacklight: 0
     - _UseBump2ndMap: 0
     - _UseBumpMap: 0
     - _UseClippingCanceller: 0
     - _UseDither: 0
-    - _UseEmission: 0
+    - _UseEmission: 1
     - _UseEmission2nd: 0
     - _UseGlitter: 0
     - _UseMain2ndTex: 0
     - _UseMain3rdTex: 0
-    - _UseMatCap: 1
-    - _UseMatCap2nd: 1
+    - _UseMatCap: 0
+    - _UseMatCap2nd: 0
     - _UseOutline: 0
     - _UsePOM: 0
     - _UseParallax: 0
@@ -673,8 +702,8 @@ Material:
     - _AudioLinkVertexUVParams: {r: 0.25, g: 0, b: 0, a: 0.125}
     - _BackfaceColor: {r: 0, g: 0, b: 0, a: 0}
     - _BacklightColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 0.69}
-    - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color2nd: {r: 1, g: 1, b: 1, a: 1}
     - _Color3rd: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveColor: {r: 1, g: 1, b: 1, a: 1}
@@ -724,6 +753,7 @@ Material:
     - _OutlineLitColor: {r: 1, g: 0.19999996, b: 0, a: 0}
     - _OutlineTexHSVG: {r: 0, g: 1, b: 1, a: 1}
     - _OutlineTex_ScrollRotate: {r: 0, g: 0, b: 0, a: 0}
+    - _PreColor: {r: 1, g: 1, b: 1, a: 1}
     - _ReflectionColor: {r: 1, g: 1, b: 1, a: 1}
     - _ReflectionCubeColor: {r: 0, g: 0, b: 0, a: 1}
     - _RimColor: {r: 0.6886792, g: 0.54899424, b: 0.5558286, a: 0.41}
