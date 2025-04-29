@@ -230,11 +230,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &60128645 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4895680871844536297, guid: f46f67d8e783a4a56823d0164df0d12c, type: 3}
-  m_PrefabInstance: {fileID: 2921963756487259223}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &60128646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8721182361550213313, guid: f46f67d8e783a4a56823d0164df0d12c, type: 3}
@@ -275,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackedImageManager: {fileID: 1215352194}
-  modelPrefab: {fileID: 60128645}
+  characterWithStage: {fileID: 2921963756487259224}
   markerName: SampleMarker
   alarmManager: {fileID: 0}
   modelAnimator: {fileID: 60128649}
@@ -2041,7 +2036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1215352189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2158,7 +2153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1411243704
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2227,7 +2222,7 @@ Transform:
   m_GameObject: {fileID: 1411243703}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.18, z: 0.63}
+  m_LocalPosition: {x: 0, y: 0.02, z: 0.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2314,7 +2309,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -7446.109}
+  m_SizeDelta: {x: 0, y: -4022.9465}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1430944353
 MonoBehaviour:
@@ -2608,7 +2603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 155, y: -89}
+  m_AnchoredPosition: {x: 155, y: -88.99988}
   m_SizeDelta: {x: 300, y: 500}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1624825671
@@ -3273,18 +3268,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1651154641040950627, guid: f46f67d8e783a4a56823d0164df0d12c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1651154641040950627, guid: f46f67d8e783a4a56823d0164df0d12c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1651154641040950627, guid: f46f67d8e783a4a56823d0164df0d12c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1651154641040950627, guid: f46f67d8e783a4a56823d0164df0d12c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0052053034
       objectReference: {fileID: 0}
@@ -3324,19 +3307,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2974876766496368305, guid: f46f67d8e783a4a56823d0164df0d12c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4267254338845225310, guid: f46f67d8e783a4a56823d0164df0d12c, type: 3}
       propertyPath: m_Name
       value: Shinano & Clouds
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267254338845225310, guid: f46f67d8e783a4a56823d0164df0d12c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f46f67d8e783a4a56823d0164df0d12c, type: 3}
+--- !u!1 &2921963756487259224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4267254338845225310, guid: f46f67d8e783a4a56823d0164df0d12c, type: 3}
+  m_PrefabInstance: {fileID: 2921963756487259223}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3234325801880825997
 PrefabInstance:
   m_ObjectHideFlags: 0
