@@ -9,7 +9,7 @@ public class AutoQuitTimerButton : MonoBehaviour
     public Image image;
     public TMP_Text text;
 
-    void Awake()
+    private void Awake()
     {
         Instance = this;
         image = gameObject.GetComponent<Image>();
@@ -17,10 +17,10 @@ public class AutoQuitTimerButton : MonoBehaviour
         Init();
     }
 
-    public void Init()
+    private void Init()
     {
         minutes = 1;
-        text.text = $"{minutes.ToString()} MIN";
+        text.text = $"{minutes.ToString()}분";
     }
     
 
@@ -34,21 +34,6 @@ public class AutoQuitTimerButton : MonoBehaviour
         {
             minutes = 1;
         }
-        text.text = $"{minutes.ToString()} MIN";
-        
-    }
-    
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        text.text = $"{minutes.ToString()}분";
     }
 }
