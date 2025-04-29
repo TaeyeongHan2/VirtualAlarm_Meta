@@ -18,20 +18,13 @@ public class DateButton : MonoBehaviour
     {
         dayNumber = day;
         calenderManager = manager;
-        dateText.text = day.ToString();
-        //초기의 날짜 버튼 아이콘은 투명색임
-        circleIcon.color = new Color(1, 1, 1, 0);
+        dateText.text  = dayNumber.ToString();
     }
 
     public void OnClick()
     {
         Debug.Log($"날짜 버튼 클릭됨: {dayNumber}일");
-        calenderManager.OnDayButtonClicked(this);
-    }
-
-    public void SetCircleColor(Color color)
-    {
-        circleIcon.color = color;
+        calenderManager.OnDayButtonClicked(this); 
     }
 
     public int GetDay()

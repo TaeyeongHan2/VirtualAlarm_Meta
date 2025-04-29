@@ -546,7 +546,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sat
+  m_text: "\uD1A0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
   m_sharedMaterial: {fileID: 4182930717037307786, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
@@ -867,9 +867,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Wed
-
-'
+  m_text: "\uC218\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
   m_sharedMaterial: {fileID: 4182930717037307786, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
@@ -1669,9 +1667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'May
-
-'
+  m_text: "5\uC6D4\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
   m_sharedMaterial: {fileID: 4182930717037307786, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
@@ -5489,9 +5485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Mon
-
-'
+  m_text: "\uC6D4\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
   m_sharedMaterial: {fileID: 4182930717037307786, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
@@ -6453,7 +6447,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tue
+  m_text: "\uD654"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
   m_sharedMaterial: {fileID: 4182930717037307786, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
@@ -7393,7 +7387,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fri
+  m_text: "\uAE08"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
   m_sharedMaterial: {fileID: 4182930717037307786, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
@@ -9262,7 +9256,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Thu
+  m_text: "\uBAA9"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
   m_sharedMaterial: {fileID: 4182930717037307786, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
@@ -9398,9 +9392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sun
-
-'
+  m_text: "\uC77C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
   m_sharedMaterial: {fileID: 4182930717037307786, guid: 2a5c7b267a466134d923de71dbf5b893, type: 2}
@@ -9995,9 +9987,6 @@ MonoBehaviour:
   dateGrid: {fileID: 1606546109}
   popupPanel: {fileID: 57499547}
   popupDateText: {fileID: 998016340}
-  earlyColor: {r: 0.76388013, g: 0.45389807, b: 0.9433962, a: 0}
-  onTimeColor: {r: 0.65461147, g: 0.78616345, b: 0.304082, a: 0}
-  lateColor: {r: 0.8553459, g: 0.6145776, b: 0.23938921, a: 0}
   settedTimeText: {fileID: 0}
   wakeupTimeText: {fileID: 0}
 --- !u!224 &257908797501224595 stripped
@@ -10393,6 +10382,10 @@ PrefabInstance:
       propertyPath: circleIcon
       value: 
       objectReference: {fileID: 6378223934596347222, guid: b6159dee701437c428c9186147e855f6, type: 3}
+    - target: {fileID: 6586801312797418011, guid: b6159dee701437c428c9186147e855f6, type: 3}
+      propertyPath: calenderManager
+      value: 
+      objectReference: {fileID: 57499551}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
