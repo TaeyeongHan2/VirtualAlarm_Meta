@@ -6,29 +6,19 @@ public class ARImageTrackingManager : MonoBehaviour
 {
     private static readonly int CanInteract = Animator.StringToHash("CanInteract");
     private static readonly int AlarmState = Animator.StringToHash("AlarmState");
+    
+    [SerializeField] private ARTrackedImageManager trackedImageManager;
+    [SerializeField] private GameObject modelPrefab;
+    [SerializeField] private string markerName;
+    [SerializeField] private AlarmManager alarmManager;
 
-    [SerializeField]
-    private ARTrackedImageManager trackedImageManager;
-    [SerializeField] 
-    private GameObject modelPrefab;
-    [SerializeField] 
-    private string markerName;
-    [SerializeField]
-    private AlarmManager alarmManager;
+    [field: Header("Model 정렬")] 
+    public float ModelYRotationOffset { get; } = 180f; // 모델 180도 돌리게 설정
+    private float modelYoffset = 100f; // 테스트를 위해 100 뛰움
     
-    [Header("Model 정렬")]
-    public float modelYRotationOffset = 180f;
-    [SerializeField] 
-    private float modelYoffset = 0f;
-    
-    [SerializeField]
-    private Animator modelAnimator;
-    
-    private ARTrackedImage _currImage = null;
-    
-    
-    // 초기값은 정시에 일어난 걸로 설정
-    public string wakeUpStatus = "early";
+    [SerializeField] private Animator modelAnimator;
+    [SerializeField] private ARTrackedImage _currImage;
+    private string wakeUpStatus = "early";    // 초기값은 early로 설정
 
     private void OnEnable()
     {
@@ -67,30 +57,6 @@ public class ARImageTrackingManager : MonoBehaviour
                 PlaceSetAnimation(pair.Value);
             }
         }
-        
-        /*
-        // removed는 XRTrackedImage 타입이므로 referenceImage, trackabledID 사용 불가!
-        // 대신 현재 trackables에서 마커가 사라졌는지 직접 확인:
-        // 마커가 사라질 때
-        bool markerStillTracked = false;
-        foreach (var trackedImage in trackedImageManager.trackables)
-        {
-            Debug.Log($"{trackedImage.referenceImage.name} : {trackedImage.trackingState}");
-            
-            // referenceImage가 null일 수 있으므로, TrackabledID로 비교
-            if (trackedImage.referenceImage.name == markerName &&
-                trackedImage.trackingState == TrackingState.Tracking)
-            {
-                markerStillTracked = true;
-                break;
-            }
-        }
-
-        if (!markerStillTracked)
-        {
-            modelPrefab.SetActive(false);
-            _currImage = null;
-        }*/
     }
 
     private void PlaceSetAnimation(ARTrackedImage trackedImage)
@@ -98,7 +64,7 @@ public class ARImageTrackingManager : MonoBehaviour
         modelPrefab.transform.position = trackedImage.transform.position +
                                          trackedImage.transform.up * modelYoffset;
         modelPrefab.transform.rotation = trackedImage.transform.rotation 
-                                         * Quaternion.Euler(0f, modelYRotationOffset, 0f);
+                                         * Quaternion.Euler(0f, ModelYRotationOffset, 0f);
         
         // 알람 상태 판정
         // 마커를 처음 인식한 순간 -> 현재 시간과 알람 시간 비교
