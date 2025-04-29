@@ -159,7 +159,7 @@ public class ARImageTrackingManager : MonoBehaviour
             // 알람 애니메이션 길이만큼 대기 후 상호작용 해제
             float alarmAnimLength = 5f;
             StartCoroutine(EnableInteractionAfterDelay(alarmAnimLength));
-            DateTime now = DateTime.Now;
+           
             int year = now.Year;
             int month = now.Month;
             int day = now.Day;
