@@ -12,7 +12,7 @@ public class ARbutton : MonoBehaviour
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene("ARTestScene");
+        SceneManager.LoadScene("CalendarScene");
         
     }
     public void OnHold(InputAction.CallbackContext context)
