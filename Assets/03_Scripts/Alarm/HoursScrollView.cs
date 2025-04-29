@@ -34,7 +34,7 @@ public class HoursScrollView : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         GameObject _ = FindCenterObject(hoursTargetPosition);
         if (_ != null)
