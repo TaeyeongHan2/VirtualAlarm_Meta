@@ -159,6 +159,17 @@ public class ARImageTrackingManager : MonoBehaviour
             // 알람 애니메이션 길이만큼 대기 후 상호작용 해제
             float alarmAnimLength = 5f;
             StartCoroutine(EnableInteractionAfterDelay(alarmAnimLength));
+            DateTime now = DateTime.Now;
+            int year = now.Year;
+            int month = now.Month;
+            int day = now.Day;
+
+            string wakeupTime = now.ToString("HH:mm");
+            string settedTime = $"{AlarmManager.currentHour:D2}:{AlarmManager.currentMinute:D2}";
+
+            TimeData.SaveDayRecord(year, month, day, settedTime, wakeupTime);
+
+            Debug.Log($"[AR] PlayerPrefs 저장 완료: {year}.{month}.{day} Set:{settedTime}, Wake:{wakeupTime}");
         }
     }
 
