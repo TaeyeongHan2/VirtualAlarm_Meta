@@ -2,12 +2,16 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class GotoCalendarButton : MonoBehaviour
+public class UISceneManger : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
+    }
+    public void ChangeSceneToAR()
+    {
+        SceneManager.LoadScene("ARTestScene");
     }
 
     public void ChangeSceneToCalendar()
