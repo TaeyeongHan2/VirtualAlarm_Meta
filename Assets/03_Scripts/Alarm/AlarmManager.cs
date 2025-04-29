@@ -63,10 +63,12 @@ public class AlarmManager : MonoBehaviour
         Application.runInBackground = true; // 백그라운드에서도 실행하게 앱 설정
         
         DateTime currentTime = DateTime.Now; 
-        int minutesToWait = 5 - (currentTime.Minute % 5);
+        //int minutesToWait = 5 - (currentTime.Minute % 5);
         int secondsToWait = 60 - (currentTime.Second);
 
-        float initialWaitTime = (minutesToWait * 60) + secondsToWait - 60f;
+        //float initialWaitTime = (minutesToWait * 60) + secondsToWait - 60f;
+        float initialWaitTime = secondsToWait;
+
     
         Debug.Log($"코루틴의 최초 대기시간 : {initialWaitTime}");
         
@@ -78,7 +80,7 @@ public class AlarmManager : MonoBehaviour
             DateTime now = DateTime.Now;
             CheckAndRunAlarm(now);
             
-            yield return new WaitForSecondsRealtime(300f);
+            yield return new WaitForSecondsRealtime(60f);
         }
     }
 }

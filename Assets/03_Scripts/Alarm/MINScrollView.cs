@@ -35,7 +35,7 @@ public class MINScrollView : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         GameObject _ = FindCenterObject(minuteTargetPosition);
         if (_ != null)

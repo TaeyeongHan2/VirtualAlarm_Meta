@@ -45,9 +45,4 @@ public class UIManager : MonoBehaviour
     
         Debug.Log($"알람 수: {homePageAlarmsButtons.Count}, 데이터 수 : {alarmDataList.Count}");
     }
-
-    void Update()
-    {
-        
-    }
 }

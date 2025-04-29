@@ -23,7 +23,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 11836641639896599226
       m_GuidHigh: 13711153122178219528
-    m_Size: {x: 0.05, y: 0.06665217}
+    m_Size: {x: 0.1, y: 0.13330434}
     m_SpecifySize: 1
     m_Name: SampleMarker
-    m_Texture: {fileID: 2800000, guid: b7a24aba32dba44408be6bac1ecd47be, type: 3}
+    m_Texture: {fileID: 0}
