@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
-using Unity.Mathematics.Geometry;
 using UnityEngine;
+using System;
 
 public class CalenderManager : MonoBehaviour
 {
@@ -21,6 +21,12 @@ public class CalenderManager : MonoBehaviour
     public Color onTimeColor;
     //늦잠잔 경우: 연주황
     public Color lateColor;
+    
+    // 알람 설정 시간 표시용
+    public TextMeshProUGUI settedTimeText;
+    // 실제 기상 시간 표시용
+    public TextMeshProUGUI wakeupTimeText;   
+
 
     private Dictionary<int, DateButton> dateButtons = new();
 
@@ -47,7 +53,9 @@ public class CalenderManager : MonoBehaviour
         if (selectedDate != null)
         {
             OpenPopup(clickedDay);
+            
         }
+        
     }
 
     private Color GetColorForDay(int day)
@@ -64,13 +72,25 @@ public class CalenderManager : MonoBehaviour
     public void OpenPopup(int day)
     {
         popupPanel.SetActive(true);
-        popupDateText.text = $"2025.05.{selectedDate.GetDay(): 00}";
+        popupDateText.text = $"2025.05.{selectedDate.GetDay():00}";
     }
     
     //팝업을 닫음
     public void ClosePopup()
     {
         popupPanel.SetActive(false);
+    }
+    
+    //팝업 내부에 해당 날짜의 알람 설정 시각과
+    //사용자가 AR버튼을 누른(일어난 시각)을 표시해줌
+    public void GetWakeupTime(int day)
+    {
+        
+    }
+    //AR 버튼이 눌리면 사용자의 일어난 시각을 불러와서 wakeuptime에 표시
+    public void GetSettedTime(int day)
+    {
+        
     }
     
 }
