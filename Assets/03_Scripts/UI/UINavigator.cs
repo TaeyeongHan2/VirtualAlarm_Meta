@@ -13,6 +13,7 @@ public class UINavigator : MonoBehaviour
     public GameObject[] pagePrefabsArray;
     public GameObject currentPage;
     public int currentPageIndex;
+    
     public UIReference uiReference; // 캐싱
     
     private void Awake()
