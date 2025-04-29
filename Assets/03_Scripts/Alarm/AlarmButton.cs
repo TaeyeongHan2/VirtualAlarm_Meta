@@ -7,6 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -111,5 +112,10 @@ public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
                 v.gameObject.SetActive(true);
         }
 
+    }
+    
+    public void ChangeSceneToARTestScene()
+    {
+        SceneManager.LoadScene("ARTestScene");
     }
 }
