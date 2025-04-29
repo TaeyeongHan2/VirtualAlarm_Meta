@@ -45,10 +45,4 @@ public class AutoQuitAlarmButton : MonoBehaviour
             AutoQuitTimerButton.Instance.image.color = Color.white;
         }
     }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
