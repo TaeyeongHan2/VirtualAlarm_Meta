@@ -23,7 +23,7 @@ public class TimeData : MonoBehaviour
         return PlayerPrefs.GetString(key, "-");
     }
 
-    public static void ClearAllRecords() // 필요 시 전체 삭제용
+    public static void ClearAllRecords() 
     {
         PlayerPrefs.DeleteAll();
     }

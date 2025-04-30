@@ -22,25 +22,36 @@ public class CalenderManager : MonoBehaviour
     // 실제 기상 시간 표시용
     public TextMeshProUGUI wakeupTimeText;   
 
-
-    //private Dictionary<int, DateButton> dateButtons = new();
+    void Start()
+    {
+        GenerateCalendar();
+    }
 
     public void Awake()
     {
         popupPanel.SetActive(false);
     }
     
+    public void GenerateCalendar()
+    {
+        int day = 1;
+        foreach (Transform child in dateGrid)
+        {
+            DateButton btn = child.GetComponent<DateButton>();
+            if (btn != null)
+            {
+                btn.Init(day, this);
+                day++;
+            }
+        }
+    }
     
     public void OnDayButtonClicked(DateButton clickedDate)
     {
         selectedDate = clickedDate;
         int clickedDay = selectedDate.GetDay();
 
-        //팝업 열기
-        if (selectedDate != null)
-        {
-            OpenPopup(clickedDay);
-        }
+        OpenPopup(clickedDay);
     }
     
     //팝업을 열음
@@ -48,6 +59,7 @@ public class CalenderManager : MonoBehaviour
     {
         int year = 2025;
         int month = 5;
+        Debug.Log($"[CalenderManager] OpenPopup 호출됨 {day}일");
         popupPanel.SetActive(true);
        
         popupDateText.text = $"{year}.{month:00}.{day:00}";
@@ -61,24 +73,4 @@ public class CalenderManager : MonoBehaviour
     {
         popupPanel.SetActive(false);
     }
-    
-    //팝업 내부에 해당 날짜의 알람 설정 시각과
-    //사용자가 AR버튼을 누른(일어난 시각)을 표시해줌
-    public void GetSettedTime(int day)
-    {
-        //현재 설정된 알람 리스트 불러오기
-        var alarmList = UIManager.Instance.alarmDataList;
-        if (alarmList == null || alarmList.Count == 0)
-        {
-            Debug.Log("설정한 알람이 없음");
-            return;
-        }
-        
-    }
-    public void GetWakeupTime(int day)
-    {
-        DateTime now = DateTime.Now;
-        
-    }
-    
 }

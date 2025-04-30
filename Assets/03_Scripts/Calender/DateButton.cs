@@ -19,12 +19,15 @@ public class DateButton : MonoBehaviour
         dayNumber = day;
         calenderManager = manager;
         dateText.text  = dayNumber.ToString();
+        
+        GetComponent<Button>().onClick.AddListener(OnClick);
     }
 
     public void OnClick()
     {
         Debug.Log($"날짜 버튼 클릭됨: {dayNumber}일");
         calenderManager.OnDayButtonClicked(this); 
+        Debug.Log("팝업이 열렸습니다. ");
     }
 
     public int GetDay()
