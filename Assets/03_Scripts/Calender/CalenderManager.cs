@@ -33,13 +33,13 @@ public class CalenderManager : MonoBehaviour
     
     public void OnDayButtonClicked(DateButton clickedDate)
     {
-        //버튼에 저장된 날짜 정보를 가져옴
+        selectedDate = clickedDate;
         int clickedDay = selectedDate.GetDay();
+
         //팝업 열기
         if (selectedDate != null)
         {
             OpenPopup(clickedDay);
-            popupDateText.text = clickedDay.ToString();
         }
     }
     

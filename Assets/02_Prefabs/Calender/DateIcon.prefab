@@ -149,6 +149,7 @@ MonoBehaviour:
   circleIcon: {fileID: 0}
   dateText: {fileID: 0}
   calenderManager: {fileID: 0}
+  dayNumber: 0
 --- !u!1 &9091603951120637974
 GameObject:
   m_ObjectHideFlags: 0
