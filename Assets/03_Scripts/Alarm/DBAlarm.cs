@@ -9,6 +9,9 @@ public class DBAlarm : MonoBehaviour
     public AlarmBase currentAlarmData;
     public int enabledAlarmTimeAsMinutes;
     public string wakeUpStatus;
+    
+    public Color pastelPink;
+
 
     public void InitWakeUpStatus()
     {
@@ -24,6 +27,7 @@ public class DBAlarm : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        pastelPink = new Color(1.0f, 0.855f, 0.878f);
     }
 
     private void Start()
