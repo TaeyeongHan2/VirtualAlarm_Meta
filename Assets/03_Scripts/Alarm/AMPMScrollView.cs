@@ -37,7 +37,7 @@ public class AMPMScrollView : MonoBehaviour
         }
         else
         {
-            //Debug.Log(ray.origin); // 체크중인 위치
+            Debug.Log(ray.origin); // 체크중인 위치
             return null; // collider 없으면 null 반환
         }
     }
