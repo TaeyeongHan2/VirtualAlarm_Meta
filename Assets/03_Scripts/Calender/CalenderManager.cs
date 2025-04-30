@@ -34,23 +34,15 @@ public class CalenderManager : MonoBehaviour
     
     public void GenerateCalendar()
     {
-        // int day = 1;
-        // foreach (Transform child in dateGrid)
-        // {
-        //     DateButton btn = child.GetComponent<DateButton>();
-        //     if (btn != null)
-        //     {
-        //         btn.Init(day, this);
-        //         day++;
-        //     }
-        // }
-        
         int totalDays = 31;
 
         for (int i = 1; i <= totalDays; i++)
         {
             GameObject obj = Instantiate(dateButtonPrefab, dateGrid);
             DateButton btn = obj.GetComponent<DateButton>();
+            
+            btn.dateText = obj.GetComponentInChildren<TextMeshProUGUI>();
+            btn.calenderManager = this;
             btn.Init(i, this);
         }
     }
@@ -73,8 +65,8 @@ public class CalenderManager : MonoBehaviour
        
         popupDateText.text = $"{year}.{month:00}.{day:00}";
         
-        settedTimeText.text = $"Setted Time: {TimeData.GetSettedTime(year, month, day)}";
-        wakeupTimeText.text = $"WakeUp Time: {TimeData.GetWakeupTime(year, month, day)}";
+        settedTimeText.text = $"설정한 알람 시간: {TimeData.GetSettedTime(year, month, day)}";
+        wakeupTimeText.text = $"일어난 시간: {TimeData.GetWakeupTime(year, month, day)}";
     }
     
     //팝업을 닫음
