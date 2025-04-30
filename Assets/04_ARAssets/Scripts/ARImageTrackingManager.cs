@@ -8,7 +8,7 @@ using UnityEngine.XR.ARSubsystems;
 
 public class ARImageTrackingManager : MonoBehaviour
 {
-    private float delayBeforeHideModel = 1f; // 5초동안 마커 안보이면 매소드 실행을 위한 변수
+    private float delayBeforeHideModel = 0.5f; // 5초동안 마커 안보이면 매소드 실행을 위한 변수
     private Coroutine hideModelCoroutine; 
     private Dictionary<string, Coroutine> hideModelCoroutines = new Dictionary<string, Coroutine>();
 
@@ -41,6 +41,7 @@ public class ARImageTrackingManager : MonoBehaviour
 
     private void OnChanged(ARTrackablesChangedEventArgs<ARTrackedImage> eventArgs)
     {
+        Debug.Log("[AR] trackableschanged event 발생");
         // 마커가 새로 인식(추가)될 때
         foreach (var trackedImage in eventArgs.added)
         {
@@ -53,6 +54,7 @@ public class ARImageTrackingManager : MonoBehaviour
                 }
                 
                 characterWithStage.transform.SetParent(trackedImage.transform);
+                characterWithStage.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
                 characterWithStage.SetActive(true);
                 _currImage = trackedImage;
                 
@@ -91,7 +93,17 @@ public class ARImageTrackingManager : MonoBehaviour
                         StopCoroutine(hideModelCoroutine);
                         hideModelCoroutine = null;
                     }
-                    characterWithStage.SetActive(true);
+
+                    if (!characterWithStage.activeSelf)
+                    {
+                        characterWithStage.SetActive(true);
+                        characterWithStage.transform.SetParent(trackedImage.transform);
+                        characterWithStage.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                        _currImage = trackedImage;
+                        Debug.Log("[AR] Tracking 복구 -> Model 다시 표시");
+                        PlaceSetAnimation(trackedImage);
+                    }
+                    
                 }
             }
         }
@@ -101,8 +113,8 @@ public class ARImageTrackingManager : MonoBehaviour
     {
         characterWithStage.transform.position = trackedImage.transform.position +
                                          trackedImage.transform.up * modelYoffset;
-        characterWithStage.transform.rotation = trackedImage.transform.rotation 
-                                         * Quaternion.Euler(0f, ModelYRotationOffset, 0f);
+        //characterWithStage.transform.rotation = trackedImage.transform.rotation * Quaternion.Euler(0f, ModelYRotationOffset, 0f);
+        //characterWithStage.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         
         // 알람 상태 판정
         // 마커를 처음 인식한 순간 -> 현재 시간과 알람 시간 비교
