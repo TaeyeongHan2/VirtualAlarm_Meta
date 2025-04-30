@@ -16,7 +16,7 @@ public class UIManager : MonoBehaviour
     }
     void Start()
     {
-        uiReference = UIReference.instance; 
+        uiReference = UIReference.instance; // 싱글톤 인스턴스를 캐싱
     }
     
     public void InitNewAlarm()

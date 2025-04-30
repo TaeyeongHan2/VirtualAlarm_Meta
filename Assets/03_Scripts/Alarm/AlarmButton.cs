@@ -30,8 +30,8 @@ public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     
     public Image buttonImage;
     private String _textBeforeDraged;
-    public float dragCheckSensitivity = 1000f;
-    public String UITextOnDraging = "Swape to Delete"; 
+    private float dragCheckSensitivity;
+    public String UITextOnDraging; 
     private void Awake()
     {
         textUIs = GetComponentsInChildren<TMP_Text>();
@@ -63,6 +63,7 @@ public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         
         
         buttonImage = GetComponentInChildren<Image>();
+        dragCheckSensitivity = 1000f;
     }
     
     public void SetData(AlarmBase alarmBase)
@@ -111,11 +112,11 @@ public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             foreach (var v in daysTextUI)
                 v.gameObject.SetActive(true);
         }
-
     }
     
     public void ChangeSceneToARTestScene()
     {
+        DBAlarm.Instance.wakeUpStatus = "early";
         SceneManager.LoadScene("ARTestScene");
     }
 }

@@ -35,4 +35,9 @@ public class UITextSetter : MonoBehaviour
     {
         button.text = newText;
     }
+    
+    void Update()
+    {
+        
+    }
 }

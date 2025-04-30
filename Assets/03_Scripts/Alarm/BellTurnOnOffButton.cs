@@ -9,8 +9,8 @@ public class BellTurnOnOffButton : MonoBehaviour
     public Image image;
     public Color currentColor;
     public TMP_Text text;
-    public string bellOnText = "벨소리";
-    public string bellOffText = "진동";
+    public string bellOnText = "BELL ON";
+    public string bellOffText = "BELL OFF";
     void Awake()
     {
         Instance = this;
@@ -44,5 +44,19 @@ public class BellTurnOnOffButton : MonoBehaviour
             currentColor = image.color;
             text.text = bellOnText;
         }
+    }
+    
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
