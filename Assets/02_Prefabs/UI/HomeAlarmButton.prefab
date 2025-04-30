@@ -394,7 +394,7 @@ MonoBehaviour:
   saturdayTextUI: {fileID: 0}
   sundayTextUI: {fileID: 0}
   buttonImage: {fileID: 0}
-  dragCheckSensitivity: 100
+  dragCheckSensitivity: 0
   UITextOnDraging: Swape to Delete
 --- !u!1 &1256487192048914491
 GameObject:

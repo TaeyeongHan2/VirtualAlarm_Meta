@@ -14,17 +14,6 @@ public class AlarmManager : MonoBehaviour
         // todo : 코루틴의 최초 실행 시점을 알람이 생성될 때로 옮겨 성능 향상 시도하기
         alarmCheckCoroutine = StartCoroutine(RunAtEvery5Minutes());
     }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     public void CheckAndRunAlarm(DateTime now)
     {
         var now12 = now.ToString("tt hh:mm");
@@ -45,14 +34,11 @@ public class AlarmManager : MonoBehaviour
                 SFXManager.Instance.PlaySound(UIReference.instance.alarmMusic, isAutoQuit, AUTOQuitMIN*60f);
                 UINavigator.instance.ChangePage(4);
                 UIReference.instance.currentTimeButtonText.text = now12;
-                // TODO: currentTimeButtonText가 실시간으로 시간 변하게 설정
                 
-                // 알람 삭제 코드
-                //UIManager.Instance.alarmDataList.RemoveAt(i);
-                //UIManager.Instance.homePageAlarmsButtons.RemoveAt(i);
-                //Destroy(_);
-
-
+                DBAlarm.Instance.currentAlarmData = currentAlarmData;
+                DBAlarm.Instance.enabledAlarmTimeAsMinutes = currentTotalMin;
+                
+                // TODO: currentTimeButtonText가 실시간으로 시간 변하게 설정
             }
             
         }

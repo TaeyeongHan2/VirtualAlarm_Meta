@@ -150,7 +150,7 @@ public class ARModelZoomRotation : MonoBehaviour
             if (trackedImage != null)
             {
                 modelTransform.rotation = trackedImage.transform.rotation *
-                                          Quaternion.Euler(0f, arImageTrackingManager.modelYRotationOffset, 0f);
+                                          Quaternion.Euler(0f, arImageTrackingManager.ModelYRotationOffset, 0f);
             }
             
         }
