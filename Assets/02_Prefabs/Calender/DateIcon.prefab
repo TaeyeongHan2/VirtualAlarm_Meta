@@ -146,8 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034c4f690c3d504478ae665e7db5a539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circleIcon: {fileID: 0}
-  dateText: {fileID: 0}
+  circleIcon: {fileID: 6378223934596347222}
+  dateText: {fileID: 8650548718684321506, guid: 433a25994cc74d049b54dbae95db8240, type: 3}
   calenderManager: {fileID: 0}
   dayNumber: 0
 --- !u!1 &9091603951120637974

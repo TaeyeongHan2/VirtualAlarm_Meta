@@ -34,15 +34,24 @@ public class CalenderManager : MonoBehaviour
     
     public void GenerateCalendar()
     {
-        int day = 1;
-        foreach (Transform child in dateGrid)
+        // int day = 1;
+        // foreach (Transform child in dateGrid)
+        // {
+        //     DateButton btn = child.GetComponent<DateButton>();
+        //     if (btn != null)
+        //     {
+        //         btn.Init(day, this);
+        //         day++;
+        //     }
+        // }
+        
+        int totalDays = 31;
+
+        for (int i = 1; i <= totalDays; i++)
         {
-            DateButton btn = child.GetComponent<DateButton>();
-            if (btn != null)
-            {
-                btn.Init(day, this);
-                day++;
-            }
+            GameObject obj = Instantiate(dateButtonPrefab, dateGrid);
+            DateButton btn = obj.GetComponent<DateButton>();
+            btn.Init(i, this);
         }
     }
     
