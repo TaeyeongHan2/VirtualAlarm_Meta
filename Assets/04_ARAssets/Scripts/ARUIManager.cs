@@ -7,27 +7,27 @@ public class ARUIManager : MonoBehaviour
 {
     public GameObject scrollviewPanel;
     
-    public PlayerInput playerInput;
+    //public PlayerInput playerInput;
 
-    public ScrollRect scrollRect;
+    //public ScrollRect scrollRect;
 
     public void Start()
     {
-        scrollRect.verticalNormalizedPosition = 0f;
+        //scrollRect.verticalNormalizedPosition = 0f;
     }
 
     public void ScrollViewOpenButton()
     {
         scrollviewPanel.SetActive(true);
         
-        playerInput.SwitchCurrentActionMap("UI");
+        //playerInput.SwitchCurrentActionMap("UI");
     }
 
     public void ScrollViewCloseButton()
     {
         scrollviewPanel.SetActive(false);
         
-        playerInput.SwitchCurrentActionMap("TouchControl");
+        //playerInput.SwitchCurrentActionMap("TouchControl");
     }
 
     public void OnGoToAlarmScene()
