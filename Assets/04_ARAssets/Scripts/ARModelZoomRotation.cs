@@ -12,11 +12,17 @@ public class ARModelZoomRotation : MonoBehaviour
     [SerializeField]
     private ARImageTrackingManager arImageTrackingManager;
     
+    [Header("Voice")]
+    public AudioSource audioSource;
+    public AudioClip audioClip;
+
+    private bool hasPlayedRotateVoice = false;
+    
     [Header("Zoom/Rotation Settings")]
     public float zoomSpeed = 0.002f;
     public float minHeadScale = 0.5f;
     public float maxHeadScale = 1.5f;
-    public float rotationSpeed = 0.5f;
+    public float rotationSpeed = 1f;
 
     private bool isPinching = false;
     private float prevTouchDistance = 0f;
@@ -67,6 +73,7 @@ public class ARModelZoomRotation : MonoBehaviour
         {
             isPinching = false;
             isRotating = false;
+            hasPlayedRotateVoice = false;
             return;
         }
         Vector2 p0 = positions[0];
@@ -112,6 +119,13 @@ public class ARModelZoomRotation : MonoBehaviour
             float prevAngle = Mathf.Atan2(prevTouchVector.y, prevTouchVector.x) * Mathf.Rad2Deg;
             float curAngle = Mathf.Atan2(curTouchVector.y, curTouchVector.x) * Mathf.Rad2Deg;
             float deltaAngle = Mathf.DeltaAngle(prevAngle, curAngle);
+
+            // Voice
+            if (!hasPlayedRotateVoice && Mathf.Abs(deltaAngle) > 1f)
+            {
+                audioSource.PlayOneShot(audioClip);
+                hasPlayedRotateVoice = true;
+            }
             
             modelTransform.Rotate(Vector3.up, -deltaAngle * rotationSpeed, Space.World);
             prevTouchVector = curTouchVector;
@@ -154,6 +168,9 @@ public class ARModelZoomRotation : MonoBehaviour
             }
             
         }
+        
+        hasPlayedRotateVoice = false;
+        
         Debug.Log("UI Btn Click : Zoom/Rotation Reset");
     }
 }
