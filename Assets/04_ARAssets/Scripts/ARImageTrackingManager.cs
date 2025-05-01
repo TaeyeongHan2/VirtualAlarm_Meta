@@ -156,6 +156,11 @@ public class ARImageTrackingManager : MonoBehaviour
             wakeUpStatus = "early";
             //Debug.Log("error");
         }
+
+        if (DBAlarm.Instance.wakeUpStatus != null)
+        {
+            wakeUpStatus = DBAlarm.Instance.wakeUpStatus;
+        }
         
         // Animator Controller change
         if (modelAnimator != null)

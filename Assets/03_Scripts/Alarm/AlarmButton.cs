@@ -116,7 +116,13 @@ public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     
     public void ChangeSceneToARTestScene()
     {
-        DBAlarm.Instance.wakeUpStatus = "early";
+        DBAlarm.Instance.InitWakeUpStatus();
+        SceneManager.LoadScene("ARTestScene");
+    }
+    
+    public void ChangeSceneToARTestSceneEarly()
+    {
+        DBAlarm.Instance.SetWakeUpStatus();
         SceneManager.LoadScene("ARTestScene");
     }
 }

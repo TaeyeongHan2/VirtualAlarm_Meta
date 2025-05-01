@@ -13,6 +13,10 @@ public class DBAlarm : MonoBehaviour
     public Color pastelPink;
 
 
+    public void SetWakeUpStatus()
+    {
+        wakeUpStatus = "early";
+    }
     public void InitWakeUpStatus()
     {
         wakeUpStatus = null;

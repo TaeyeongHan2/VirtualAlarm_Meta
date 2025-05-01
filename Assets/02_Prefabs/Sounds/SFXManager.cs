@@ -33,8 +33,7 @@ public class SFXManager : MonoBehaviour
         if (audio.isPlaying)
         {
             audio.Stop();
-            UINavigator.instance.ChangePage(1);
+            //UINavigator.instance.ChangePage(1);
         }
     }
-
 }
