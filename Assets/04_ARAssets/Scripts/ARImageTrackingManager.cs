@@ -31,6 +31,10 @@ public class ARImageTrackingManager : MonoBehaviour
     public static int currentHour;
     public static int currentMinute;
     
+    [Header("Voice")]
+    public AudioSource audioSource;
+    public AudioClip guideAudioClip;
+    private bool guideAudioPlayingStart = false;
 
     private void OnEnable()
     {
@@ -136,6 +140,7 @@ public class ARImageTrackingManager : MonoBehaviour
         
         var settedAlarmTime = DBAlarm.Instance.enabledAlarmTimeAsMinutes;
         var standard = settedAlarmTime + 3;
+        
                     
         // 현재 시간과 알람 시간 차이 비교하여 사용자의 일어남 상태 확인하여 상태에 저장
         if (currentTotalMin > standard )
@@ -156,12 +161,17 @@ public class ARImageTrackingManager : MonoBehaviour
             wakeUpStatus = "early";
             //Debug.Log("error");
         }
-
+        /*
         if (DBAlarm.Instance.wakeUpStatus != null)
         {
             wakeUpStatus = DBAlarm.Instance.wakeUpStatus;
         }
-        
+       */
+
+        if (string.IsNullOrEmpty(DBAlarm.Instance.wakeUpStatus))
+        {
+            DBAlarm.Instance.wakeUpStatus = wakeUpStatus;
+        }
         // Animator Controller change
         if (modelAnimator != null)
         {
@@ -184,8 +194,9 @@ public class ARImageTrackingManager : MonoBehaviour
             }
             modelAnimator.SetInteger(AlarmState, alarmState);
             modelAnimator.SetBool(CanInteract, false);
-            
-            
+
+
+            guideAudioPlayingStart = true;
             // 알람 애니메이션 길이만큼 대기 후 상호작용 해제
             StartCoroutine(SetInteractionAfterAnimation());
         }
@@ -222,6 +233,8 @@ public class ARImageTrackingManager : MonoBehaviour
         characterWithStage.SetActive(false);
         _currImage = null;
         hideModelCoroutine = null;
+
+        guideAudioPlayingStart = false;
     }
 
     private IEnumerator SetInteractionAfterAnimation()
@@ -229,9 +242,22 @@ public class ARImageTrackingManager : MonoBehaviour
         yield return null;
         
         AnimatorStateInfo currentState = modelAnimator.GetCurrentAnimatorStateInfo(0);
-        float length = currentState.length;
-        Debug.Log($"[AR] 현재 Animation 길이 : {length}");
-        yield return new WaitForSeconds(length);
+        
+        while (currentState.normalizedTime < 1.0f || modelAnimator.IsInTransition(0))
+        {
+            yield return null;
+            currentState = modelAnimator.GetCurrentAnimatorStateInfo(0);
+        }
+        
+        //float length = currentState.length;
+        //Debug.Log($"[AR] 현재 Animation 길이 : {length}");
+        //yield return new WaitForSeconds(length);
+
+        if (audioSource != null && guideAudioClip != null)
+        {
+            audioSource.PlayOneShot(guideAudioClip);
+            Debug.Log("Guide Audio Clip Play");
+        }
         modelAnimator.SetBool(CanInteract, true);
         Debug.Log("[AR] CanInteract = true");
     }
