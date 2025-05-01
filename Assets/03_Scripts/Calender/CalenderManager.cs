@@ -20,18 +20,21 @@ public class CalenderManager : MonoBehaviour
     // 알람 설정 시간 표시용
     public TextMeshProUGUI settedTimeText;
     // 실제 기상 시간 표시용
-    public TextMeshProUGUI wakeupTimeText;   
+    public TextMeshProUGUI wakeupTimeText;
 
-    void Start()
-    {
-        GenerateCalendar();
-    }
+    public bool createCalendarOnStart;
 
     public void Awake()
     {
         popupPanel.SetActive(false);
     }
     
+    void Start()
+    {
+        if (createCalendarOnStart)
+            GenerateCalendar();
+    }
+
     public void GenerateCalendar()
     {
         int totalDays = 31;
