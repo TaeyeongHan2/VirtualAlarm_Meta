@@ -26,7 +26,7 @@ public class UITextSetter : MonoBehaviour
         string tt = AMPMScrollView.Instance.AMorPM.TrimEnd();
         string hh = HoursScrollView.Instance.hours.TrimEnd();
         string mm = MINScrollView.Instance.minute.TrimEnd();
-        uiReference.ClockTimeSetButtonText.text = $"{tt} {hh} : {mm}";;
+        uiReference.ClockTimeSetButtonText.text = $"{tt} {hh}:{mm}";;
     }
     
     
