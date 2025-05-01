@@ -28,6 +28,9 @@ public class ARImageTrackingManager : MonoBehaviour
     [SerializeField] private ARTrackedImage _currImage;
     private string wakeUpStatus;
     
+    public static int currentHour;
+    public static int currentMinute;
+    
 
     private void OnEnable()
     {
@@ -181,6 +184,16 @@ public class ARImageTrackingManager : MonoBehaviour
             // 알람 애니메이션 길이만큼 대기 후 상호작용 해제
             StartCoroutine(SetInteractionAfterAnimation());
         }
+        // PlayerPrefs 저장
+        string settedTimeString = $"{settedAlarmTime / 60:00}:{settedAlarmTime % 60:00}";
+        string wakeupTimeString = $"{currentHours:00}:{currentMinutes:00}";
+
+        int year = now.Year;
+        int month = now.Month;
+        int day = now.Day;
+
+        TimeData.SaveDayRecord(year, month, day, settedTimeString, wakeupTimeString);
+        
     }
 
     private IEnumerator EnableInteractionAfterDelay(float delay)
