@@ -11,24 +11,27 @@ public class DateButton : MonoBehaviour
     public CalenderManager calenderManager;
     
     //해당하는 날짜
-    private int dayNumber;
+    [HideInInspector]
+    public int dayNumber;
 
     public void Init(int day, CalenderManager manager)
     {
         dayNumber = day;
         calenderManager = manager;
-        dateText.text = day.ToString();
-        //초기의 날짜 버튼 아이콘은 투명색임
-        circleIcon.color = new Color(1, 1, 1, 0);
+        dateText.text  = dayNumber.ToString();
+        
+        GetComponent<Button>().onClick.AddListener(OnClick);
     }
 
     public void OnClick()
     {
-        calenderManager.OnDateSelected(dayNumber);
+        Debug.Log($"날짜 버튼 클릭됨: {dayNumber}일");
+        calenderManager.OnDayButtonClicked(this); 
+        Debug.Log("팝업이 열렸습니다. ");
     }
 
-    public void SetCircleColor(Color color)
+    public int GetDay()
     {
-        circleIcon.color = color;
+        return dayNumber;
     }
 }

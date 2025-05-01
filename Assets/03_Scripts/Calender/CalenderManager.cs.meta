@@ -7,7 +7,8 @@ MonoImporter:
   - dateButtonPrefab: {fileID: 6205230814493899798, guid: b6159dee701437c428c9186147e855f6, type: 3}
   - emptyButtonPrefab: {fileID: 8939234472100655993, guid: 99fe2dae3a4953342937268ea215e119, type: 3}
   - dateGrid: {instanceID: 0}
-  - popupPanel: {instanceID: 0}
+  - popupPanel: {fileID: 4001732875010420727, guid: 562d1005632afc14f8497942736e7877, type: 3}
+  - popupDateText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

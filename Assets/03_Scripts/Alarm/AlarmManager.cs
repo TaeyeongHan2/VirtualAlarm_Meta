@@ -9,6 +9,11 @@ public class AlarmManager : MonoBehaviour
 
     public static AlarmBase currentAlarmData;
     public static int currentTotalMin;
+    
+    public static int currentHour;
+    public static int currentMinute;
+    
+    
     void Awake()
     {
         // todo : 코루틴의 최초 실행 시점을 알람이 생성될 때로 옮겨 성능 향상 시도하기
@@ -27,6 +32,8 @@ public class AlarmManager : MonoBehaviour
                 currentAlarmData = alarmDataList[i];
                 var currentHours = DateTime.Now.Hour;
                 var currentMinutes = DateTime.Now.Minute;
+                currentHour = DateTime.Now.Hour;
+                currentMinute = DateTime.Now.Minute;
                 currentTotalMin = currentHours * 60 + currentMinutes;
                 var isAutoQuit = currentAlarmData.isAUTOQuitOn;
                 var AUTOQuitMIN = currentAlarmData.AUTOQuitMinutes;
