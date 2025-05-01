@@ -13,6 +13,8 @@ public class CharacterVoicePlay : MonoBehaviour
 
     public AudioClip WaveLine;
     public AudioClip JumpLine;
+    
+    public AudioClip GuideLine;
 
     public void PlayEarlyLine()
     {
@@ -60,4 +62,8 @@ public class CharacterVoicePlay : MonoBehaviour
     }
 
 
+    public void PlayGuideLine()
+    {
+        audioSource.PlayOneShot(GuideLine);
+    }
 }

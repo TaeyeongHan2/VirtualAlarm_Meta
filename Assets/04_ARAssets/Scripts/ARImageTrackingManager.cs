@@ -31,10 +31,10 @@ public class ARImageTrackingManager : MonoBehaviour
     public static int currentHour;
     public static int currentMinute;
     
-    [Header("Voice")]
-    public AudioSource audioSource;
-    public AudioClip guideAudioClip;
-    private bool guideAudioPlayingStart = false;
+    //[Header("Voice")]
+    //public AudioSource audioSource;
+    //public AudioClip guideAudioClip;
+    //private bool guideAudioPlayingStart = false;
 
     private void OnEnable()
     {
@@ -196,7 +196,7 @@ public class ARImageTrackingManager : MonoBehaviour
             modelAnimator.SetBool(CanInteract, false);
 
 
-            guideAudioPlayingStart = true;
+            //guideAudioPlayingStart = true;
             // 알람 애니메이션 길이만큼 대기 후 상호작용 해제
             StartCoroutine(SetInteractionAfterAnimation());
         }
@@ -234,7 +234,7 @@ public class ARImageTrackingManager : MonoBehaviour
         _currImage = null;
         hideModelCoroutine = null;
 
-        guideAudioPlayingStart = false;
+        //guideAudioPlayingStart = false;
     }
 
     private IEnumerator SetInteractionAfterAnimation()
@@ -242,7 +242,16 @@ public class ARImageTrackingManager : MonoBehaviour
         yield return null;
         
         AnimatorStateInfo currentState = modelAnimator.GetCurrentAnimatorStateInfo(0);
+        float waitTime = currentState.length;
+
+        while (modelAnimator.IsInTransition(0))
+        {
+            yield return null;
+        }
         
+        float remainingTime= (1.0f - currentState.normalizedTime) * waitTime;
+        yield return new WaitForSeconds(remainingTime);
+        /*
         while (currentState.normalizedTime < 1.0f || modelAnimator.IsInTransition(0))
         {
             yield return null;
@@ -258,6 +267,7 @@ public class ARImageTrackingManager : MonoBehaviour
             audioSource.PlayOneShot(guideAudioClip);
             Debug.Log("Guide Audio Clip Play");
         }
+        */
         modelAnimator.SetBool(CanInteract, true);
         Debug.Log("[AR] CanInteract = true");
     }

@@ -164,8 +164,6 @@ MonoBehaviour:
   alarmManager: {fileID: 0}
   modelAnimator: {fileID: 60128649}
   _currImage: {fileID: 0}
-  audioSource: {fileID: 325891525}
-  guideAudioClip: {fileID: 8300000, guid: a21d28444d14f2f488a27d46e9253daa, type: 3}
 --- !u!4 &65312752
 Transform:
   m_ObjectHideFlags: 0
@@ -294,11 +292,12 @@ MonoBehaviour:
   earlyLine2: {fileID: 8300000, guid: 48dde0ee43348dd4baadf22a57392533, type: 3}
   earlyLine3: {fileID: 8300000, guid: 92af90eb9e6918040a5fe7e53a654915, type: 3}
   onTimeLine1: {fileID: 8300000, guid: ae1698100b477404590525e9e0d7fbe1, type: 3}
-  onTimeLine2: {fileID: 8300000, guid: cd7e2eb90424938418e7f15f80504c3a, type: 3}
+  onTimeLine2: {fileID: 8300000, guid: 38f4e2b73c378764698281dd57881768, type: 3}
   lateLine1: {fileID: 8300000, guid: d8b38701c618af6419971ab1c85922d2, type: 3}
   lateLine2: {fileID: 8300000, guid: b20a1b61f6a253241a19091fbfdf45b2, type: 3}
   WaveLine: {fileID: 8300000, guid: bcbc32a1600b1504988d0aef18fea415, type: 3}
   JumpLine: {fileID: 8300000, guid: 86c914a3869380845b683a8122002167, type: 3}
+  GuideLine: {fileID: 8300000, guid: a21d28444d14f2f488a27d46e9253daa, type: 3}
 --- !u!82 &325891525
 AudioSource:
   m_ObjectHideFlags: 0
