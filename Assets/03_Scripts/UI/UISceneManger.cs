@@ -11,6 +11,7 @@ public class UISceneManger : MonoBehaviour
     }
     public void ChangeSceneToAR()
     {
+        DBAlarm.Instance.wakeUpStatus = null;
         SceneManager.LoadScene("ARTestScene");
     }
 
