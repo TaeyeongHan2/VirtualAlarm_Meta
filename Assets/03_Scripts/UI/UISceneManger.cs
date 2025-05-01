@@ -11,11 +11,14 @@ public class UISceneManger : MonoBehaviour
     }
     public void ChangeSceneToAR()
     {
+        DBAlarm.Instance.InitWakeUpStatus();
+
         SceneManager.LoadScene("ARTestScene");
     }
 
     public void ChangeSceneToCalendar()
     {
+        
         SceneManager.LoadScene("CalendarScene");
     }
 
