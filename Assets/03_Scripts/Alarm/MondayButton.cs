@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class MondayButton : MonoBehaviour
 {
+    
     public static MondayButton Instance { get; private set; }
     public bool isActive;
     public Image image;
@@ -18,14 +19,14 @@ public class MondayButton : MonoBehaviour
     public void Init()
     {
         isActive = true;
-        image.color = Color.yellow;
+        image.color = DBAlarm.Instance.pastelPink;
         currentColor = image.color;
     }
     
 
     public void ChageButtonState()
     {
-        if (currentColor == Color.yellow)
+        if (currentColor == DBAlarm.Instance.pastelPink)
         {
             image.color = Color.gray;
             isActive = false;
@@ -33,23 +34,9 @@ public class MondayButton : MonoBehaviour
         }
         else if (currentColor == Color.gray)
         {
-            image.color = Color.yellow;
+            image.color = DBAlarm.Instance.pastelPink;
             isActive = true;
             currentColor = image.color;
         }
-    }
-    
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

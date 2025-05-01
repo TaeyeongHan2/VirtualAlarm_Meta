@@ -8,7 +8,7 @@ using UnityEngine.XR.ARSubsystems;
 
 public class ARImageTrackingManager : MonoBehaviour
 {
-    private float delayBeforeHideModel = 5f; // 5초동안 마커 안보이면 매소드 실행을 위한 변수
+    private float delayBeforeHideModel = 0.5f; // 5초동안 마커 안보이면 매소드 실행을 위한 변수
     private Coroutine hideModelCoroutine; 
     private Dictionary<string, Coroutine> hideModelCoroutines = new Dictionary<string, Coroutine>();
 
@@ -41,6 +41,7 @@ public class ARImageTrackingManager : MonoBehaviour
 
     private void OnChanged(ARTrackablesChangedEventArgs<ARTrackedImage> eventArgs)
     {
+        Debug.Log("[AR] trackableschanged event 발생");
         // 마커가 새로 인식(추가)될 때
         foreach (var trackedImage in eventArgs.added)
         {
@@ -53,11 +54,13 @@ public class ARImageTrackingManager : MonoBehaviour
                 }
                 
                 characterWithStage.transform.SetParent(trackedImage.transform);
+                characterWithStage.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
                 characterWithStage.SetActive(true);
                 _currImage = trackedImage;
                 
                 PlaceSetAnimation(trackedImage);
             }
+            
         }
         
         foreach (var pair in eventArgs.removed)
@@ -66,6 +69,42 @@ public class ARImageTrackingManager : MonoBehaviour
             if (removedARMarker.referenceImage.name == markerName)
             { 
                 hideModelCoroutine = StartCoroutine(HideCharacterModel());
+                //                PlaceSetAnimation(trackedImage);
+
+            }
+        }
+
+        foreach (var trackedImage in eventArgs.updated)
+        {
+            Debug.Log($"[AR] {markerName} trackingState: {trackedImage.trackingState}");
+            if (trackedImage.referenceImage.name == markerName)
+            {
+                if (trackedImage.trackingState != TrackingState.Tracking)
+                {
+                    if (hideModelCoroutine == null)
+                    {
+                        hideModelCoroutine = StartCoroutine(HideCharacterModel());
+                    }
+                }
+                else
+                {
+                    if(hideModelCoroutine != null)
+                    {
+                        StopCoroutine(hideModelCoroutine);
+                        hideModelCoroutine = null;
+                    }
+
+                    if (!characterWithStage.activeSelf)
+                    {
+                        characterWithStage.SetActive(true);
+                        characterWithStage.transform.SetParent(trackedImage.transform);
+                        characterWithStage.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+                        _currImage = trackedImage;
+                        Debug.Log("[AR] Tracking 복구 -> Model 다시 표시");
+                        PlaceSetAnimation(trackedImage);
+                    }
+                    
+                }
             }
         }
     }
@@ -74,8 +113,8 @@ public class ARImageTrackingManager : MonoBehaviour
     {
         characterWithStage.transform.position = trackedImage.transform.position +
                                          trackedImage.transform.up * modelYoffset;
-        characterWithStage.transform.rotation = trackedImage.transform.rotation 
-                                         * Quaternion.Euler(0f, ModelYRotationOffset, 0f);
+        //characterWithStage.transform.rotation = trackedImage.transform.rotation * Quaternion.Euler(0f, ModelYRotationOffset, 0f);
+        //characterWithStage.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
         
         // 알람 상태 판정
         // 마커를 처음 인식한 순간 -> 현재 시간과 알람 시간 비교
@@ -100,37 +139,39 @@ public class ARImageTrackingManager : MonoBehaviour
         {
             wakeUpStatus = "late";
         }
-        else if(settedAlarmTime > currentTotalMin)
-        {
-            wakeUpStatus = "early";
-        }
-        else if (currentTotalMin <= standard && settedAlarmTime < currentTotalMin)
+        else if(currentTotalMin >= settedAlarmTime && currentTotalMin <= standard)
         {
             wakeUpStatus = "onTime";
         }
+        else if (currentTotalMin < settedAlarmTime)
+        {
+            wakeUpStatus = "early";
+        }
         else
         {
-            Debug.Log("error");
+            // 기본값
+            wakeUpStatus = "early";
+            //Debug.Log("error");
         }
-
-        if (DBAlarm.Instance.wakeUpStatus != null)
-        {
-            wakeUpStatus = DBAlarm.Instance.wakeUpStatus;
-        }
+        
         // Animator Controller change
         if (modelAnimator != null)
         {
-            int alarmState = 0; // 기본값: early
+            // 기본값: early
+            int alarmState = 0; 
             switch (wakeUpStatus)
             {
                 case "early":
                     alarmState = 0;
+                    Debug.Log("[AR] 애니메이션 상태 : early");
                     break;
                 case "onTime":
                     alarmState = 1;
+                    Debug.Log("[AR] 애니메이션 상태 : onTime");
                     break;
                 case "late":
                     alarmState = 2;
+                    Debug.Log("[AR] 애니메이션 상태 : late");
                     break;
             }
             modelAnimator.SetInteger(AlarmState, alarmState);
@@ -138,19 +179,7 @@ public class ARImageTrackingManager : MonoBehaviour
             
             
             // 알람 애니메이션 길이만큼 대기 후 상호작용 해제
-            float alarmAnimLength = 5f;
-            StartCoroutine(EnableInteractionAfterDelay(alarmAnimLength));
-           
-            int year = now.Year;
-            int month = now.Month;
-            int day = now.Day;
-
-            string wakeupTime = now.ToString("HH:mm");
-            string settedTime = $"{AlarmManager.currentHour:D2}:{AlarmManager.currentMinute:D2}";
-
-            TimeData.SaveDayRecord(year, month, day, settedTime, wakeupTime);
-
-            Debug.Log($"[AR] PlayerPrefs 저장 완료: {year}.{month}.{day} Set:{settedTime}, Wake:{wakeupTime}");
+            StartCoroutine(SetInteractionAfterAnimation());
         }
     }
 
@@ -168,10 +197,24 @@ public class ARImageTrackingManager : MonoBehaviour
     
     private IEnumerator HideCharacterModel()
     {
+        //StopAllCoroutines();
         yield return new WaitForSeconds(delayBeforeHideModel);
         
         characterWithStage.transform.SetParent(null);
         characterWithStage.SetActive(false);
         _currImage = null;
+        hideModelCoroutine = null;
+    }
+
+    private IEnumerator SetInteractionAfterAnimation()
+    {
+        yield return null;
+        
+        AnimatorStateInfo currentState = modelAnimator.GetCurrentAnimatorStateInfo(0);
+        float length = currentState.length;
+        Debug.Log($"[AR] 현재 Animation 길이 : {length}");
+        yield return new WaitForSeconds(length);
+        modelAnimator.SetBool(CanInteract, true);
+        Debug.Log("[AR] CanInteract = true");
     }
 }
