@@ -909,6 +909,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 94cfad54b314bea4c967cd6e920f18cc, type: 3}
+    - target: {fileID: 4479367004382297749, guid: d06754ba741038b4bbda448054ea9a37, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5c3b39323b192264d87e7412ce9e5d78, type: 3}
+    - target: {fileID: 4690774528453928332, guid: d06754ba741038b4bbda448054ea9a37, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690774528453928332, guid: d06754ba741038b4bbda448054ea9a37, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690774528453928332, guid: d06754ba741038b4bbda448054ea9a37, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4690774528453928332, guid: d06754ba741038b4bbda448054ea9a37, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1037,6 +1053,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6668682976270016525, guid: d06754ba741038b4bbda448054ea9a37, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6a1606a2efcb41948a55d7f860d68a88, type: 3}
     - target: {fileID: 6675076820884342350, guid: d06754ba741038b4bbda448054ea9a37, type: 3}
       propertyPath: m_IsActive
       value: 1

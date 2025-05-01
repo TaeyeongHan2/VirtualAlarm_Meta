@@ -1131,10 +1131,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 645434362}
     m_Modifications:
     - target: {fileID: 1974462691918875845, guid: d5ace2a207002084abd84e510851a46b, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1974462691918875845, guid: d5ace2a207002084abd84e510851a46b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1667775059}
@@ -1218,13 +1214,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5045906350369258110, guid: d5ace2a207002084abd84e510851a46b, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6169389010237666255, guid: d5ace2a207002084abd84e510851a46b, type: 3}
       propertyPath: m_Name
       value: 02_ViewHome
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169389010237666255, guid: d5ace2a207002084abd84e510851a46b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
