@@ -164,6 +164,8 @@ MonoBehaviour:
   alarmManager: {fileID: 0}
   modelAnimator: {fileID: 60128649}
   _currImage: {fileID: 0}
+  audioSource: {fileID: 325891525}
+  guideAudioClip: {fileID: 8300000, guid: a21d28444d14f2f488a27d46e9253daa, type: 3}
 --- !u!4 &65312752
 Transform:
   m_ObjectHideFlags: 0
