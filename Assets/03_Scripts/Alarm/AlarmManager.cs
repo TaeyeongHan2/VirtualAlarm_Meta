@@ -7,8 +7,8 @@ public class AlarmManager : MonoBehaviour
 {
     private Coroutine alarmCheckCoroutine; // 추후 코루틴을 종료해야할 때를 대비해서 IEnumerator 캐싱
 
-    public static AlarmBase currentAlarmData;
-    public static int currentTotalMin;
+    public AlarmBase currentAlarmData;
+    public int currentTotalMin;
     
     public static int currentHour;
     public static int currentMinute;
@@ -30,11 +30,11 @@ public class AlarmManager : MonoBehaviour
             {
                 Debug.Log("벨이 울립니다");
                 currentAlarmData = alarmDataList[i];
+                
                 var currentHours = DateTime.Now.Hour;
                 var currentMinutes = DateTime.Now.Minute;
-                currentHour = DateTime.Now.Hour;
-                currentMinute = DateTime.Now.Minute;
                 currentTotalMin = currentHours * 60 + currentMinutes;
+                
                 var isAutoQuit = currentAlarmData.isAUTOQuitOn;
                 var AUTOQuitMIN = currentAlarmData.AUTOQuitMinutes;
                 var isBellOn = currentAlarmData.isBellOn;
@@ -42,8 +42,8 @@ public class AlarmManager : MonoBehaviour
                 UINavigator.instance.ChangePage(4);
                 UIReference.instance.currentTimeButtonText.text = now12;
                 
-                DBAlarm.Instance.currentAlarmData = currentAlarmData;
-                DBAlarm.Instance.enabledAlarmTimeAsMinutes = currentTotalMin;
+                DBAlarm.Instance.setCurrentAlarmData( currentAlarmData);
+                DBAlarm.Instance.SetEnabledAlarmTimeAsMinutes(currentTotalMin);
                 
                 // TODO: currentTimeButtonText가 실시간으로 시간 변하게 설정
             }
@@ -53,8 +53,6 @@ public class AlarmManager : MonoBehaviour
     
     private IEnumerator RunAtEvery5Minutes()
     {
-        Application.runInBackground = true; // 백그라운드에서도 실행하게 앱 설정
-        
         DateTime currentTime = DateTime.Now; 
         //int minutesToWait = 5 - (currentTime.Minute % 5);
         int secondsToWait = 60 - (currentTime.Second);

@@ -22,18 +22,5 @@ namespace _03_Scripts.Alarm
         public int AUTOQuitMinutes;
         
         public Dictionary<string, bool> alarmRepeatDays;
-        //생성자에서 초기화 시도했으나 다른 클래스에서 사용실패.
-        /*
-        public AlarmBase()
-        {
-            alarmRepeatDays["Monday"] = false;
-            alarmRepeatDays["Tuesday"] = false;
-            alarmRepeatDays["Wednesday"] = false;
-            alarmRepeatDays["Thursday"] = false;
-            alarmRepeatDays["Friday"] = false;
-            alarmRepeatDays["Saturday"] = false;
-            alarmRepeatDays["Sunday"] = false;
-        }
-        */
     }
 }

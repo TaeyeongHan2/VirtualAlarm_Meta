@@ -80,7 +80,7 @@ public class ARImageTrackingManager : MonoBehaviour
 
             }
         }
-
+        #if UNITY_ANDROID
         foreach (var trackedImage in eventArgs.updated)
         {
             Debug.Log($"[AR] {markerName} trackingState: {trackedImage.trackingState}");
@@ -100,7 +100,7 @@ public class ARImageTrackingManager : MonoBehaviour
                         StopCoroutine(hideModelCoroutine);
                         hideModelCoroutine = null;
                     }
-
+        
                     if (!characterWithStage.activeSelf)
                     {
                         characterWithStage.SetActive(true);
@@ -114,6 +114,7 @@ public class ARImageTrackingManager : MonoBehaviour
                 }
             }
         }
+        #endif
     }
 
     private void PlaceSetAnimation(ARTrackedImage trackedImage)

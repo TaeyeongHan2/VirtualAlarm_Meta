@@ -65,12 +65,10 @@ public class AlarmButton : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         buttonImage = GetComponentInChildren<Image>();
         dragCheckSensitivity = 1000f;
     }
-    
+
     public void SetData(AlarmBase alarmBase)
     {
         alarmData = alarmBase; // 캐싱
-        
-        StringBuilder reapeatDaysSB = new StringBuilder();
         var trueKeys = alarmBase.alarmRepeatDays.Where(x => x.Value == true).Select(x => x.Key);
         foreach (var key in trueKeys)
         {

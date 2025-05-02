@@ -2,15 +2,9 @@ using UnityEngine;
 
 public class HomeContext : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Application.runInBackground = true; // 백그라운드에서도 실행하게 앱 설정
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

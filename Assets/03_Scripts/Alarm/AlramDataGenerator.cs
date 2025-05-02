@@ -8,17 +8,16 @@ public class AlramDataGenerator : MonoBehaviour
 {
     public static AlramDataGenerator instance{get; private set;}
     public UIReference uiReference;
-
-    public string alram24Time;
-
+    
     private void Awake()
     {
-        instance = this; // 싱글톤용
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
         uiReference = UIReference.instance;
-    }
-    void Start()
-    {
-        
     }
 
     public AlarmBase CreateAlarmData()
@@ -51,20 +50,5 @@ public class AlramDataGenerator : MonoBehaviour
         setting.alarmRepeatDays["일"] = SundayButton.Instance.isActive;
 
         return setting;
-    }
-
-    public void saveAlarmData(AlarmBase alarm)
-    {
-        
-    }
-
-    public void SwitchBellorVIBE()
-    {
-        
-    }
-
-    void Update()
-    {
-        
     }
 }

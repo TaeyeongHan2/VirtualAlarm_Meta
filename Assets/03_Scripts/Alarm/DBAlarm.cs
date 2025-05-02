@@ -11,8 +11,16 @@ public class DBAlarm : MonoBehaviour
     public string wakeUpStatus;
     
     public Color pastelPink;
+    
+    public void setCurrentAlarmData( AlarmBase alarm)
+    {
+        currentAlarmData = alarm;
+    }
 
-
+    public void SetEnabledAlarmTimeAsMinutes(float minutes)
+    {
+        
+    }
     public void SetWakeUpStatus()
     {
         wakeUpStatus = "early";
